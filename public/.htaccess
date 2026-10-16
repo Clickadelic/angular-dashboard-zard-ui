@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Falls die Datei oder das Verzeichnis exakt existiert, direkt ausliefern (z.B. main.js, styles.css, Bilder)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Alle anderen Anfragen (Route-Pfade) an index.html weiterleiten
+  RewriteRule ^ index.html [L]
+</IfModule>

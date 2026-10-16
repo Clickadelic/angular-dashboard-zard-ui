@@ -1,0 +1,39 @@
+name: Tests
+
+on:
+    push:
+        branches: ["prod"]
+    pull_request:
+        branches: ["prod"]
+    workflow_dispatch:
+
+concurrency:
+    group: tests-${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+
+env:
+    NODE_VERSION: "24"
+
+jobs:
+    test:
+        name: Run Vitest
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ env.NODE_VERSION }}
+                  cache: npm
+
+            - name: Install Node dependencies
+              run: npm ci
+
+            - name: Run Vitest
+              run: npm run test

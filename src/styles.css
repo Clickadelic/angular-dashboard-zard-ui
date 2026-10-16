@@ -2,8 +2,6 @@
 
 @import 'tailwindcss';
 
-@import "tailwindcss";
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
