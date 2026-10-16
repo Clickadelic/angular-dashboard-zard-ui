@@ -61,3 +61,7 @@ For more information on using the Angular CLI, including detailed command refere
 ## Custom Color Theme for Shad/CN
 
 Generated via https://tweakcn.com/editor/theme
+
+Theme token
+
+npx shadcn@latest add https://tweakcn.com/r/themes/cmvbii15c000004l250vcf6ue
