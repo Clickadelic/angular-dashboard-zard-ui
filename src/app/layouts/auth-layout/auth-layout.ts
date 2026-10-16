@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './auth-layout.css',
 })
 export class AuthLayout {
-	protected readonly title = () => 'Authentication';
+	
 }

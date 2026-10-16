@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './login-form.html',
   styleUrl: './login-form.css',
 })
-export class LoginForm {}
+export class LoginForm {
+	protected readonly title = 'Anmelden';
+}
