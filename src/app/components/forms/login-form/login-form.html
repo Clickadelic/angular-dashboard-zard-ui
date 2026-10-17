@@ -1,8 +1,10 @@
-<form class="w-full flex flex-col gap-4 items-center justify-between">
+<form class="w-full flex flex-col gap-4 items-center justify-between" (ngSubmit)="onSubmit()">
 	<input type="email" name="email" placeholder="E-Mail" autocomplete="username"
-		class="placeholder:text-gray-400 border border-gray-300 rounded px-3 py-2 w-full" />
+		class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full"
+		[(ngModel)]="credentials.email" />
 	<input type="password" name="password" placeholder="Passwort" autocomplete="current-password"
-		class="placeholder:text-gray-400 border border-gray-300 rounded px-3 py-2 w-full" />
+		class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full"
+		[(ngModel)]="credentials.password" />
 	<div class="flex gap-2 mr-auto p-2"><input type="checkbox" name="remember-me" />
 		<label for="remember-me" class="text-gray-400">Angemeldet bleiben</label>
 	</div>
