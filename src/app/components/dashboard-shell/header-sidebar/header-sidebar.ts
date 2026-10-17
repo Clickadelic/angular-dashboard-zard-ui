@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { AuthService } from '../../../services/auth-service';
 
 @Component({
   selector: 'app-header-sidebar',
@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',
 })
-export class HeaderSidebar {}
+export class HeaderSidebar {
+  constructor(private authService: AuthService) {}
+
+  logout() {
+    this.authService.logout();
+  }
+}
