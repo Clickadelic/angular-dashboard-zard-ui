@@ -3,7 +3,13 @@ import { Button } from '../../../components/ui/button/button';
 import { AccordionItem } from '../../../components/ui/accordion/accordion-item';
 import { AccordionTrigger } from '../../../components/ui/accordion/accordion-trigger';
 import { AccordionContent } from '../../../components/ui/accordion/accordion-content';
-import { LucideFileText, LucideMoveRight } from '@lucide/angular';
+import {
+  LucideHouse,
+  LucideMoveRight,
+  LucideX,
+  LucideFileText,
+  LucideGauge,
+} from '@lucide/angular';
 
 @Component({
   selector: 'app-component-library-page',
@@ -12,8 +18,11 @@ import { LucideFileText, LucideMoveRight } from '@lucide/angular';
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
-    LucideFileText,
+    LucideHouse,
     LucideMoveRight,
+    LucideX,
+    LucideFileText,
+    LucideGauge,
   ],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',

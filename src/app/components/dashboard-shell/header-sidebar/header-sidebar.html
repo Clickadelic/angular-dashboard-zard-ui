@@ -1,13 +1,25 @@
 <aside class="fixed top-0 left-0 w-64 p-4 h-full bg-white flex flex-col items-center justify-center">
-	<h1 class="w-full text-center mb-5 p-1 text-xl flex gap-1"><span class="font-la-belle-aurore">Toby's</span>
+	<h1 class="w-full text-center mb-5 p-1 text-xl space-x-2">
+		<span class="font-la-belle-aurore">Toby's</span>
 		<span class="font-bebas-neue">Health Insurance</span>
 	</h1>
 	<nav class="mt-8 w-full flex flex-col items-start grow" aria-label="Hauptnavigation" role="navigation">
-		<ul>
-			<li><a href="/" title="Home" aria-label="Home">Home</a></li>
-			<li><a href="/dashboard" title="Dashboard" aria-label="Dashboard">Dashboard</a></li>
-			<li><a href="/dashboard/component-library" title="Component Library"
-					aria-label="Component Library">Component Library</a></li>
+		<ul class="flex flex-col items-start justify-between w-full gap-2 mr-2">
+			<li class="w-full"><a href="/"
+					class="flex gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
+					<svg lucideHouse class="size-4 mt-1"></svg>Home
+				</a>
+			</li>
+			<li class="w-full"><a href="/dashboard"
+					class="flex gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
+					<svg lucideGauge class="size-4 mt-1"></svg>Dashboard
+				</a>
+			</li>
+			<li class="w-full"><a href="/dashboard/component-library"
+					class="flex gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
+					<svg lucideFileText class="size-4 mt-1"></svg>Component Library
+				</a>
+			</li>
 		</ul>
 	</nav>
 	<div class="p-3">

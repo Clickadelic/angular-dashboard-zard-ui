@@ -8,7 +8,7 @@ import { AccordionItem } from './accordion-item';
     <button
       type="button"
       (click)="item.toggle()"
-      class="bg-white flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline w-full text-left text-sm"
+      class="bg-white flex flex-1 items-center justify-between hover:cursor-pointer p-4 font-medium transition-all w-full text-left text-sm"
     >
       <ng-content />
       <!-- Chevron Icon das sich dreht -->

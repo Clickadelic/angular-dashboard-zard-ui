@@ -6,7 +6,7 @@ import { AccordionItem } from './accordion-item';
   standalone: true,
   template: `
     @if (item.isOpen()) {
-      <div class="pb-4 pt-0 text-sm text-muted-foreground transition-all">
+      <div class="p-4 text-sm text-muted-foreground transition-all">
         <ng-content />
       </div>
     }
