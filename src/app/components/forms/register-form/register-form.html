@@ -1,1 +1,11 @@
-<p>register-form works!</p>
+<form class="w-full flex flex-col gap-4 items-center justify-between">
+	<input type="text" name="username" placeholder="Benutzername" autocomplete="username"
+		class="placeholder:text-gray-400 border border-gray-300 rounded px-3 py-2 w-full" />
+	<input type="password" name="password" placeholder="Passwort" autocomplete="current-password"
+		class="placeholder:text-gray-400 border border-gray-300 rounded px-3 py-2 w-full" />
+	<input type="password" name="password_confirmation" placeholder="Passwort bestätigen"
+		autocomplete="current-password"
+		class="placeholder:text-gray-400 border border-gray-300 rounded px-3 py-2 w-full" />
+	<button type="submit"
+		class="bg-primary text-white px-4 py-2 rounded w-full hover:bg-primary-dark transition-colors duration-300">Anmelden</button>
+</form>
