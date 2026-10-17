@@ -1,28 +1,27 @@
-<form class="w-full text-xl flex flex-col gap-4 mb-5 items-center justify-between" (ngSubmit)="onSubmit()">
+<form class="w-full text-base flex flex-col gap-4 mb-5 items-center justify-between" (ngSubmit)="onSubmit()">
 	<div class="flex flex-col gap-2 w-full">
-		<label class="text-gray-600 font-medium">Benutzername:</label>
+		<label class="text-accent font-bold">Benutzername:</label>
 		<input type="text" name="name" placeholder="Benutzername" autocomplete="username"
 			class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full" />
 	</div>
 	<div class="flex flex-col gap-2 w-full">
-		<label class="text-gray-600 font-medium">E-Mail:</label>
+		<label class="text-accent font-bold">E-Mail:</label>
 		<input type="email" name="email" placeholder="E-Mail" autocomplete="email"
 			class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full" />
 	</div>
 	<div class="flex flex-col gap-2 w-full">
-		<label class="text-gray-600 font-medium">Passwort:</label>
+		<label class="text-accent font-bold">Passwort:</label>
 		<input type="password" name="password" placeholder="Passwort" autocomplete="current-password"
 			class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full" />
 	</div>
 	<div class="flex flex-col gap-2 w-full">
-		<label class="text-gray-600 font-medium">Passwort wiederholen:</label>
+		<label class="text-accent font-bold">Passwort wiederholen:</label>
 		<input type="password" name="password_repeat" placeholder="Passwort wiederholen" autocomplete="current-password"
 			class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full" />
 	</div>
 
-	<button type="submit"
-		class="bg-primary text-white px-4 py-2 rounded w-full hover:bg-primary-dark transition-colors duration-300">Anmelden</button>
+	<app-button class="w-full">Registrieren</app-button>
 </form>
-<p class="text-gray-600">Du hast schon einen Account? <a href="/auth/login" class="text-primary hover:underline"
-		title="Zum Login">Hier einloggen</a>.
+<p class="text-gray-600 text-sm text-center">Du hast schon einen Account? <a href="/auth/login"
+		class="text-primary hover:underline" title="Zum Login">Hier einloggen</a>.
 </p>

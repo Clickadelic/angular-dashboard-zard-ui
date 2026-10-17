@@ -65,3 +65,50 @@ Generated via https://tweakcn.com/editor/theme
 Theme token
 
 npx shadcn@latest add https://tweakcn.com/r/themes/cmvbii15c000004l250vcf6ue
+
+## GitHub Actions
+
+To add a deployment, you need to add the following variables to your GitHub repository's secrets.
+
+- `DEPLOY_HOST`: "serverxy.host.com".
+- `DEPLOYMENT_USER`: "userxyz".
+- `DEPLOYMENT_PORT`: "22".
+- `DEPLOYMENT_PATH`: "www/some-path/domain-folder".
+- `DEPLOYMENT_KEY`: "SOME_BASE_64_KEY".
+
+## Project icons
+
+This project is using Lucide Angular
+
+[Lucide Angular Guide](https://lucide.dev/guide/angular/getting-started)
+
+```typescript
+import { Component } from '@angular/core';
+import { LucideFileText } from '@lucide/angular'; // Import the Lucide icon component
+
+@Component({
+  selector: 'app',
+  template: '<svg lucideFileText></svg>',
+  imports: [LucideFileText],
+})
+export class App {}
+```
+
+```typescript
+import { Component, computed, signal } from '@angular/core';
+import { LucideDynamicIcon, LucideCircleCheck, LucideCircleX } from '@lucide/angular';
+
+@Component({
+  selector: 'app',
+  template: `<svg [lucideIcon]="icon()"></svg>`,
+  imports: [LucideDynamicIcon],
+})
+export class App {
+  protected readonly model = signal<boolean>(true);
+  protected readonly icon = computed(() => (this.model() ? LucideCircleCheck : LucideCircleX));
+}
+```
+
+```html
+<svg [lucideIcon]="icon()"></svg>
+```
