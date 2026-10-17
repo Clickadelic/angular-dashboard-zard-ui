@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +8,28 @@ import { Observable } from 'rxjs';
 export class AuthService {
   private http = inject(HttpClient);
   private apiUrl = 'https://api.tobias-hopp.de/api'; // Deine API-Basis-URL
-
+  
+  // Login method
+  // Takes user credentials and returns an observable for the login request
   login(credentials: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/login`, credentials);
+  }
+
+  // Logout method
+  // Takes no parameters and returns an observable for the logout request
+  logout(): Observable<any> {
+    const token = localStorage.getItem('auth_token');
+
+    // Header mit dem Bearer-Token zusammenstellen
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.post(`${this.apiUrl}/logout`, {}, { headers }).pipe(
+      tap(() => {
+        // Token lokal im Browser löschen
+        localStorage.removeItem('auth_token');
+      })
+    );
   }
 }

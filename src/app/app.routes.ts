@@ -16,7 +16,7 @@ export const routes: Routes = [
         component: LoginPage,
       },
       {
-        path: 'registrieren',
+        path: 'registrierung',
         component: RegisterPage,
       },
     ],
