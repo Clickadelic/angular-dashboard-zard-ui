@@ -1,21 +1,36 @@
-import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
-import { LucideChevronDown } from '@lucide/angular';
+import { Component, ElementRef, HostListener, inject, input, signal } from '@angular/core';
+import { LucideChevronDown, LucideUser } from '@lucide/angular';
 
 @Component({
   selector: 'app-dropdown',
   standalone: true,
+  imports: [LucideChevronDown, LucideUser],
   template: `
     <div class="relative inline-block text-left">
-      <!-- Trigger (z.B. Button oder Profil-Avatar) -->
-      <div (click)="toggle()">
+      <!-- Semantischer Button-Trigger -->
+      <button
+        type="button"
+        (click)="toggle()"
+        class="flex items-center gap-2 focus:ring-2 focus:ring-ring"
+        [attr.aria-expanded]="isOpen()"
+      >
+	  	<svg lucideUser class="size-4 -mt-.5"></svg>
+        <!-- Optionaler Benutzername via Signal Input -->
+        @if (userName()) {
+          <span>{{ userName() }}</span>
+        }
+        
+        <!-- Zusätzlicher individueller Trigger-Inhalt falls benötigt -->
         <ng-content select="[dropdown-trigger]" />
-		<svg lucideChevronDown class="size-4 mt-1"></svg>
-      </div>
+
+        <!-- Chevron Icon -->
+        <svg lucideChevronDown class="size-4 transition-transform duration-200" [class.rotate-180]="isOpen()" />
+      </button>
 
       <!-- Dropdown Content (Menü) -->
       @if (isOpen()) {
         <div
-          class="absolute right-0 z-50 mt-2 min-w-32 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80"
+          class="absolute right-0 z-50 mt-2 min-w-48 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80"
         >
           <ng-content select="[dropdown-content]" />
         </div>
@@ -23,7 +38,11 @@ import { LucideChevronDown } from '@lucide/angular';
     </div>
   `,
 })
+
 export class Dropdown {
+  // Input Signal für den Benutzernamen
+  userName = input<string>('');
+
   isOpen = signal(false);
   private elementRef = inject(ElementRef);
 
@@ -35,7 +54,7 @@ export class Dropdown {
     this.isOpen.set(false);
   }
 
-  // Schließt das Menü automatisch, wenn man außerhalb klickt
+  // Schließt das Menü automatisch bei Klick außerhalb
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
@@ -44,14 +63,14 @@ export class Dropdown {
   }
 }
 
-// Kleine Hilfskomponente für Menü-Items
+// Hilfskomponente für Menü-Items
 @Component({
   selector: 'app-dropdown-item',
   standalone: true,
   template: `
     <button
       type="button"
-      class="flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+      class="flex w-full cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
     >
       <ng-content />
     </button>
