@@ -23,7 +23,14 @@ export const routes: Routes = [
   },
   {
 	path: 'dashboard',
-	component: DashboardLayout
+	component: DashboardLayout,
+	children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+    ],
   },
   // Fallback redirect
   {
