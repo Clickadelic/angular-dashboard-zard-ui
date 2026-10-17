@@ -7,16 +7,15 @@ import { AuthLayoutService } from '../../../services/auth-layout-service';
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [FormsModule], // FormsModule für die Zwei-Wege-Bindung im Formular
+  imports: [FormsModule],
   templateUrl: './login-form.html',
-//   styleUrls: ['./login-form.css']
 })
 export class LoginForm {
   private authService = inject(AuthService);
   private router = inject(Router);
   private layoutService = inject(AuthLayoutService);
 
-  // Model für die Inputs
+  // Model for inputs
   credentials = {
     email: '',
     password: ''

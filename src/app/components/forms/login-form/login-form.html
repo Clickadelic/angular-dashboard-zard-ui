@@ -1,8 +1,8 @@
-<form class="w-full flex flex-col gap-4 items-center justify-between" (ngSubmit)="onSubmit()">
+<form class="w-full text-xl flex flex-col gap-4 items-center justify-between mb-5" (ngSubmit)="onSubmit()">
 	<div class="flex flex-col gap-2 w-full">
 		<label class="text-gray-600 font-medium">E-Mail:</label>
 		<input type="email" name="email" placeholder="E-Mail" autocomplete="username"
-			class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full"
+			class=" placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full"
 			[(ngModel)]="credentials.email" />
 	</div>
 	<div class="flex flex-col gap-2 w-full">
@@ -11,9 +11,12 @@
 			class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full"
 			[(ngModel)]="credentials.password" />
 	</div>
-	<div class="flex gap-2 mr-auto p-2"><input type="checkbox" name="remember-me" />
+	<div class="flex gap-2 mr-auto p-2"><input type="checkbox" id="remember-me" name="remember-me" />
 		<label for="remember-me" class="text-gray-400">Angemeldet bleiben</label>
 	</div>
 	<button type="submit"
 		class="bg-primary hover:cursor-pointer text-white px-4 py-2 rounded w-full hover:bg-primary-dark transition-colors duration-300">Anmelden</button>
 </form>
+<p class="text-gray-600">Noch keinen Account? <a href="/auth/registrierung" class="text-primary hover:underline"
+		title="Zur Registrierung">Registrieren</a>.
+</p>
