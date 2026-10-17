@@ -8,10 +8,15 @@ import { Observable, tap } from 'rxjs';
 export class AuthService {
   private http = inject(HttpClient);
   private apiUrl = 'https://api.tobias-hopp.de/api'; // Deine API-Basis-URL
-
+  
+  // Login method
+  // Takes user credentials and returns an observable for the login request
   login(credentials: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/login`, credentials);
   }
+
+  // Logout method
+  // Takes no parameters and returns an observable for the logout request
   logout(): Observable<any> {
     const token = localStorage.getItem('auth_token');
 
