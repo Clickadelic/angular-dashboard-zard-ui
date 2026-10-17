@@ -3,6 +3,7 @@ import { LoginPage } from './pages/auth/login-page/login-page';
 import { AuthLayout } from './layouts/auth-layout/auth-layout';
 import { RegisterPage } from './pages/auth/register-page/register-page';
 import { DashboardLayout } from './layouts/dashboard-layout/dashboard-layout';
+
 export const routes: Routes = [
 
   // Auth Routes
@@ -22,7 +23,14 @@ export const routes: Routes = [
   },
   {
 	path: 'dashboard',
-	component: DashboardLayout
+	component: DashboardLayout,
+	children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+    ],
   },
   // Fallback redirect
   {
