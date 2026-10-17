@@ -1,4 +1,4 @@
-name: Deploy angular.tobias-hopp.de
+name: Deploy health-insurance.tobias-hopp.de
 
 on:
     push:
@@ -6,7 +6,7 @@ on:
     workflow_dispatch:
 
 concurrency:
-    group: deploy-angular-prod
+    group: deploy-health-insurance-prod
     cancel-in-progress: true
 
 permissions:
@@ -100,7 +100,7 @@ jobs:
                   REMOTE="${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}"
                   REMOTE_PATH="${{ secrets.DEPLOY_PATH }}"
 
-                  tar -C dist/modern-angular/browser -czf - . \
+                  tar -C dist/health-insurance.tobias-hopp.de/browser -czf - . \
                   | ssh -i "$HOME/.ssh/web_deploy_key" \
                       -o BatchMode=yes \
                       -o StrictHostKeyChecking=yes \
