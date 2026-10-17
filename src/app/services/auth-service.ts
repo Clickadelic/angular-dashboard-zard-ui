@@ -9,6 +9,10 @@ export class AuthService {
   private http = inject(HttpClient);
   private apiUrl = 'https://api.tobias-hopp.de/api'; // Deine API-Basis-URL
   
+  // Prüft, ob ein Token vorhanden ist
+  isLoggedIn(): boolean {
+	return !!localStorage.getItem('auth_token');
+  }
   // Login method
   // Takes user credentials and returns an observable for the login request
   login(credentials: { email: string; password: string }): Observable<any> {
