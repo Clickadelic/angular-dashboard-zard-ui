@@ -147,7 +147,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-sans: var(--font-sans);
+  /* --font-sans: var(--font-sans); */
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
 
@@ -166,6 +166,7 @@
   --shadow-2xl: var(--shadow-2xl);
 
   --font-la-belle-aurore: "La Belle Aurore", cursive;
+  --font-sans: "Bebas Neue", sans-serif;
 }
 
 @layer base {
