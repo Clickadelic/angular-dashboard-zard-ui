@@ -1,4 +1,4 @@
-name: Deploy angular.tobias-hopp.de
+name: Deploy health-insurance.tobias-hopp.de
 
 on:
     push:
