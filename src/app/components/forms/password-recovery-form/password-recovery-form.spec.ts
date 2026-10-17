@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginForm } from './login-form';
+import { PasswordRecoveryForm } from './password-recovery-form';
 
-describe('LoginForm', () => {
-  let component: LoginForm;
-  let fixture: ComponentFixture<LoginForm>;
+describe('PasswordRecoveryForm', () => {
+  let component: PasswordRecoveryForm;
+  let fixture: ComponentFixture<PasswordRecoveryForm>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LoginForm],
+      imports: [PasswordRecoveryForm],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LoginForm);
+    fixture = TestBed.createComponent(PasswordRecoveryForm);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
