@@ -6,7 +6,7 @@
 	},
 	"newProjectRoot": "projects",
 	"projects": {
-		"dbk.tobias-hopp.de": {
+		"health-insurance.tobias-hopp.de": {
 			"projectType": "application",
 			"schematics": {},
 			"root": "",

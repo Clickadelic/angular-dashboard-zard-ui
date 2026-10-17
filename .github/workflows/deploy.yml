@@ -6,7 +6,7 @@ on:
     workflow_dispatch:
 
 concurrency:
-    group: deploy-angular-prod
+    group: deploy-health-insurance-prod
     cancel-in-progress: true
 
 permissions:
