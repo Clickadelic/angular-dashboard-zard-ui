@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,17 +19,22 @@ export class AuthService {
   // Takes no parameters and returns an observable for the logout request
   logout(): Observable<any> {
     const token = localStorage.getItem('auth_token');
-
+	console.log(token);
     // Header mit dem Bearer-Token zusammenstellen
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
+		'Authorization': `Bearer ${token}`
     });
-
+	
     return this.http.post(`${this.apiUrl}/auth/logout`, {}, { headers }).pipe(
       tap(() => {
         // Token lokal im Browser löschen
         localStorage.removeItem('auth_token');
-      })
+      }),
+	  catchError((error) => {
+		console.error('Logout failed:', error);
+		// Handle the error here, e.g. display an error message to the user
+		return throwError(error);
+	  })
     );
   }
 }
