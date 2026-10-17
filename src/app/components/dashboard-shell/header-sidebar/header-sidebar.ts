@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../services/auth-service';
-
+import {
+  LucideHouse,
+  LucideMoveRight,
+  LucideX,
+  LucideFileText,
+  LucideGauge,
+} from '@lucide/angular';
 @Component({
   selector: 'app-header-sidebar',
-  imports: [],
+  imports: [LucideHouse, LucideMoveRight, LucideX, LucideFileText, LucideGauge],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',
 })
