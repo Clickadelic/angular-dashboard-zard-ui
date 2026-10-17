@@ -8,7 +8,9 @@
 			<li><a href="/dashboard" title="Dashboard" aria-label="Dashboard">Dashboard</a></li>
 		</ul>
 	</nav>
-	<div class="p-3">Logout</div>
+	<div class="p-3">
+		<form (ngSubmit)="logout()"><button type="submit">Logout</button></form>
+	</div>
 </aside>
 <header class="p-3 ml-64 w-auto bg-white flex items-center justify-between">
 	<div class="flex items-center gap-5">
