@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@import './app/assets/css/google-fonts.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -163,6 +164,8 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+
+  --font-la-belle-aurore: "La Belle Aurore", cursive;
 }
 
 @layer base {
