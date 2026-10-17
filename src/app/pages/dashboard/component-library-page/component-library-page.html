@@ -1,9 +1,38 @@
-<div class="flex gap-3">
-	<app-button>Klick mich</app-button>
-	<app-button variant="accent">Klick mich</app-button>
-	<app-button variant="secondary">Klick mich</app-button>
-	<app-button variant="destructive">Klick mich</app-button>
-	<app-button variant="outline">Klick mich</app-button>
-	<app-button variant="ghost">Klick mich</app-button>
-	<app-button variant="link">Klick mich</app-button>
+<div class="flex flex-col gap-3 mb-8">
+	<h3 class="text-2xl font-bebas-neue">Button</h3>
+	<div class="flex gap-3">
+		<app-button>Klick mich</app-button>
+		<app-button variant="accent">Klick mich</app-button>
+		<app-button variant="secondary">Klick mich</app-button>
+		<app-button variant="destructive">Klick mich</app-button>
+		<app-button variant="outline">Klick mich</app-button>
+		<app-button variant="ghost">Klick mich</app-button>
+		<app-button variant="link">Klick mich</app-button>
+	</div>
+</div>
+<hr class="border-gray-300 my-8" />
+<div>
+	<h3 class="text-2xl font-bebas-neue">Accordion</h3>
+	<div class="w-full max-w-md">
+		<app-accordion-item>
+			<app-accordion-trigger>Ist das Barrierefrei?</app-accordion-trigger>
+			<app-accordion-content>
+				Ja. Es folgt den gängigen WAI-ARIA Design-Mustern für maximale Zugänglichkeit.
+			</app-accordion-content>
+		</app-accordion-item>
+
+		<app-accordion-item>
+			<app-accordion-trigger>Kann man es stylen?</app-accordion-trigger>
+			<app-accordion-content>
+				Absolut! Da der Code komplett bei dir liegt, kannst du Tailwind-Klassen nach Belieben anpassen.
+			</app-accordion-content>
+		</app-accordion-item>
+	</div>
+</div>
+<div>
+	<h3 class="text-2xl font-bebas-neue">Icons</h3>
+	<svg lucideFileText></svg>
+	<svg lucideCircleCheck></svg>
+	<svg lucideCircleX></svg>
+	<svg lucideMoveRight></svg>
 </div>
