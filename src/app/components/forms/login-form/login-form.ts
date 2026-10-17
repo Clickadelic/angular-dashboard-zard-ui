@@ -13,7 +13,7 @@ import { AuthLayoutService } from '../../../services/auth-layout-service';
 })
 export class LoginForm {
   private authService = inject(AuthService);
-//   private router = inject(Router);
+  private router = inject(Router);
   private layoutService = inject(AuthLayoutService);
 
   // Model für die Inputs
@@ -32,10 +32,10 @@ export class LoginForm {
         console.log('Login erfolgreich!', response);
         
         // Wenn Laravel einen Token zurückgibt (z.B. response.token):
-        // localStorage.setItem('auth_token', response.token);
+        localStorage.setItem('auth_token', response.token);
 
         // Weiterleiten nach dem Login (z.B. zum Dashboard)
-        // this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         console.error('Login fehlgeschlagen', err);
