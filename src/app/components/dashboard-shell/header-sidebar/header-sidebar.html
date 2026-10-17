@@ -30,7 +30,7 @@
 
 	<div class="w-full p-2">
 		<button (click)="logout()" class="w-full flex items-center gap-1.5 hover:cursor-pointer hover:text-accent">
-			<svg lucideLogOut class="size-4 mt-1"></svg> Abmelden
+			<svg lucideLogOut class="size-4"></svg> Abmelden
 		</button>
 	</div>
 </aside>
@@ -46,9 +46,8 @@
 	</div>
 	<app-dropdown>
 		<!-- Der Trigger (kann ein Button oder ein Profilbild sein) -->
-		<button dropdown-trigger
-			class="flex items-center justify-start gap-2 p-2 rounded-md hover:bg-accent text-sm font-medium">
-			<svg lucideUser class="size-4 mt-1 text-accent"></svg>
+		<button dropdown-trigger class="flex items-center justify-start gap-2 rounded-md">
+
 			<span>Max Mustermann</span>
 			<svg lucideChevronDown class="size-4 mt-1"></svg>
 		</button>

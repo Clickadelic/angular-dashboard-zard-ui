@@ -1,19 +1,20 @@
 import { Component, ElementRef, HostListener, inject, input, signal } from '@angular/core';
-import { LucideChevronDown } from '@lucide/angular';
+import { LucideChevronDown, LucideUser } from '@lucide/angular';
 
 @Component({
   selector: 'app-dropdown',
   standalone: true,
-  imports: [LucideChevronDown],
+  imports: [LucideChevronDown, LucideUser],
   template: `
     <div class="relative inline-block text-left">
       <!-- Semantischer Button-Trigger -->
       <button
         type="button"
         (click)="toggle()"
-        class="flex items-center gap-2 rounded-md border border-border bg-background px-3 py-1.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+        class="flex items-center gap-2 focus:ring-2 focus:ring-ring"
         [attr.aria-expanded]="isOpen()"
       >
+	  	<svg lucideUser class="size-4 -mt-.5"></svg>
         <!-- Optionaler Benutzername via Signal Input -->
         @if (userName()) {
           <span>{{ userName() }}</span>
