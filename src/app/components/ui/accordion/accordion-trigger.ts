@@ -13,7 +13,7 @@ import { AccordionItem } from './accordion-item';
       <ng-content />
       <!-- Chevron Icon das sich dreht -->
       <svg
-        class="h-4 w-4 shrink-0 transition-transform duration-200"
+        class="size-4 shrink-0 transition-transform duration-200"
         [class.rotate-180]="item.isOpen()"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

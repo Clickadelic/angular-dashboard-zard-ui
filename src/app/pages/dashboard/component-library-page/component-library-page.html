@@ -1,4 +1,23 @@
 <div class="flex flex-col gap-3 mb-8">
+	<h3 class="text-2xl font-bebas-neue">Accordion</h3>
+	<div class="w-full max-w-md">
+		<app-accordion-item>
+			<app-accordion-trigger>Ist das Accordion barrierefrei?</app-accordion-trigger>
+			<app-accordion-content>
+				Ja, ist es. Es folgt den gängigen WAI-ARIA Design-Mustern für maximale Zugänglichkeit.
+			</app-accordion-content>
+		</app-accordion-item>
+
+		<app-accordion-item>
+			<app-accordion-trigger>Kann man das Accordion stylen?</app-accordion-trigger>
+			<app-accordion-content>
+				Ja, kann man. Da der Code komplett bei dir liegt, kannst du Tailwind-Klassen nach Belieben anpassen.
+			</app-accordion-content>
+		</app-accordion-item>
+	</div>
+</div>
+<hr class="border-gray-300 my-8" />
+<div class="flex flex-col gap-3 mb-8">
 	<h3 class="text-2xl font-bebas-neue">Button</h3>
 	<div class="flex gap-3">
 		<app-button>Klick mich</app-button>
@@ -12,25 +31,6 @@
 </div>
 <hr class="border-gray-300 my-8" />
 <div class="flex flex-col gap-3 mb-8">
-	<h3 class="text-2xl font-bebas-neue">Accordion</h3>
-	<div class="w-full max-w-md">
-		<app-accordion-item>
-			<app-accordion-trigger>Ist das Barrierefrei?</app-accordion-trigger>
-			<app-accordion-content>
-				Ja. Es folgt den gängigen WAI-ARIA Design-Mustern für maximale Zugänglichkeit.
-			</app-accordion-content>
-		</app-accordion-item>
-
-		<app-accordion-item>
-			<app-accordion-trigger>Kann man es stylen?</app-accordion-trigger>
-			<app-accordion-content>
-				Absolut! Da der Code komplett bei dir liegt, kannst du Tailwind-Klassen nach Belieben anpassen.
-			</app-accordion-content>
-		</app-accordion-item>
-	</div>
-</div>
-<hr class="border-gray-300 my-8" />
-<div class="flex flex-col gap-3 mb-8">
 	<h3 class="text-2xl font-bebas-neue">Icons</h3>
 	<div class="inline-flex gap-3 mb-8">
 		<svg lucideHouse></svg>
@@ -38,6 +38,9 @@
 		<svg lucideX></svg>
 		<svg lucideFileText></svg>
 		<svg lucideGauge></svg>
+		<svg lucideSearch></svg>
+		<svg lucideCheck></svg>
+		<svg lucideUser></svg>
 	</div>
 </div>
 <hr class="border-gray-300 my-8" />
