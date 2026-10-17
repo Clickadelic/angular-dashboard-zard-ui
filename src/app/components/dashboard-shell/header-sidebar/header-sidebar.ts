@@ -1,38 +1,38 @@
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router'; // <--- 1. Router importieren
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
-import {
-  LucideHouse,
-  LucideLogOut,
-  LucideX,
-  LucideFileText,
-  LucideGauge,
-} from '@lucide/angular';
-
 import { Dropdown, DropdownItem } from '../../../components/ui/dropdown/dropdown';
 
 @Component({
   selector: 'app-header-sidebar',
-  imports: [LucideHouse, LucideLogOut, LucideX, LucideFileText, LucideGauge, Dropdown, DropdownItem],
+  standalone: true,
+  imports: [
+    RouterLink,     // Wichtig für SPA-Navigation ohne Seiten-Reload
+    Dropdown,       // Dein Dropdown-Menü
+    DropdownItem    // Die Menüpunkte
+  ],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',
 })
 export class HeaderSidebar {
   private authService = inject(AuthService);
-  private router = inject(Router); // <--- 2. Router injizieren
+  private router = inject(Router);
+
+  // Signal liest den Namen aus dem LocalStorage (Fallback auf 'Benutzer')
+  currentUser = signal({ 
+    name: localStorage.getItem('user_name') || 'Benutzer' 
+  });
 
   logout() {
     this.authService.logout().subscribe({
-      next: () => {
-        // Erfolgreich vom Server ausgeloggt -> Weiterleitung zum Login
-        this.router.navigate(['/auth/login']); // Passe den Pfad an, falls deine Login-Route anders heißt
-      },
-      error: (err) => {
-        console.error('Logout fehlgeschlagen:', err);
-        // Fallback: Auch bei Fehler lokal aufräumen und umleiten
-        localStorage.removeItem('auth_token');
-        this.router.navigate(['/auth/login']);
-      }
+      next: () => this.cleanupAndRedirect(),
+      error: () => this.cleanupAndRedirect() // Auch bei Serverfehler lokal aufräumen
     });
+  }
+
+  private cleanupAndRedirect() {
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('user_name');
+    this.router.navigate(['/login']); // Passe den Login-Pfad an deine routes.ts an
   }
 }

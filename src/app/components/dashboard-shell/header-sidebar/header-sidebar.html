@@ -1,3 +1,4 @@
+<!-- Sidebar -->
 <aside
 	class="fixed top-0 left-0 w-64 p-4 h-full bg-white flex flex-col items-center justify-center border-r border-border">
 	<h1 class="w-full text-center mb-5 p-1 text-xl space-x-2">
@@ -8,21 +9,21 @@
 	<nav class="mt-8 w-full flex flex-col items-start grow" aria-label="Hauptnavigation" role="navigation">
 		<ul class="flex flex-col items-start justify-between w-full gap-2 mr-2">
 			<li class="w-full">
-				<a href="/"
+				<a routerLink="/"
 					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
-					<svg lucideHouse class="size-4" /> Home
+					Home
 				</a>
 			</li>
 			<li class="w-full">
-				<a href="/dashboard"
+				<a routerLink="/dashboard"
 					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
-					<svg lucideGauge class="size-4" /> Dashboard
+					Dashboard
 				</a>
 			</li>
 			<li class="w-full">
-				<a href="/dashboard/component-library"
+				<a routerLink="/dashboard/component-library"
 					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
-					<svg lucideFileText class="size-4" /> Component Library
+					Component Library
 				</a>
 			</li>
 		</ul>
@@ -30,27 +31,25 @@
 
 	<div class="w-full p-2">
 		<button (click)="logout()" class="w-full flex items-center gap-1.5 hover:cursor-pointer hover:text-accent">
-			<svg lucideLogOut class="size-4"></svg> Abmelden
+			Abmelden
 		</button>
 	</div>
 </aside>
-<header class="p-3 ml-64 w-auto bg-white flex items-center justify-between">
+
+<!-- Header mit Dropdown -->
+<header class="p-3 ml-64 w-auto bg-white flex items-center justify-between border-b border-border">
 	<div class="flex items-center gap-5">
 		<button class="rounded bg-white border p-1">
-			<svg lucideX size="24"></svg>
+			X
 		</button>
 		<form class="w-72">
 			<input type="text" id="app-search" name="app-search"
 				class="w-full px-2 py-1 border rounded placeholder:text-gray-400" placeholder="Suche... STRG + K" />
 		</form>
 	</div>
-	<app-dropdown>
-		<!-- Der Trigger (kann ein Button oder ein Profilbild sein) -->
-		<button dropdown-trigger class="flex items-center justify-start gap-2 rounded-md">
-			<span>Username</span>
-		</button>
 
-		<!-- Der Inhalt / die Menüpunkte -->
+	<!-- Dropdown-Komponente mit gebundenem Benutzernamen -->
+	<app-dropdown [userName]="currentUser().name">
 		<div dropdown-content class="w-48">
 			<app-dropdown-item>Profil</app-dropdown-item>
 			<app-dropdown-item>Einstellungen</app-dropdown-item>

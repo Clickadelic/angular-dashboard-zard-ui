@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, inject, input, signal } from '@angular/core';
 import { LucideChevronDown, LucideUser } from '@lucide/angular';
+import { AuthService } from '../../../services/auth-service';
 
 @Component({
   selector: 'app-dropdown',
