@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ForgotPasswordPage } from './pages/auth/forgot-password-page/forgot-password-page';
 
 import { authGuard } from './guards/auth.guard';
 
@@ -28,6 +29,10 @@ export const routes: Routes = [
       {
         path: 'registrierung',
         component: RegisterPage,
+      },
+      {
+        path: 'passwort-vergessen',
+        component: ForgotPasswordPage,
       },
     ],
   },
