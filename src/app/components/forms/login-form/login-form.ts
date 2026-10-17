@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms'; // Wichtig für ngModel
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
 import { AuthLayoutService } from '../../../services/auth-layout-service';
+import { Button } from '../../ui/button/button';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, Button],
   templateUrl: './login-form.html',
 })
 export class LoginForm {
@@ -18,7 +19,7 @@ export class LoginForm {
   // Model for inputs
   credentials = {
     email: '',
-    password: ''
+    password: '',
   };
 
   constructor() {
@@ -29,7 +30,7 @@ export class LoginForm {
     this.authService.login(this.credentials).subscribe({
       next: (response) => {
         console.log('Login erfolgreich!', response);
-        
+
         // Wenn Laravel einen Token zurückgibt (z.B. response.token):
         localStorage.setItem('auth_token', response.token);
 
@@ -39,7 +40,7 @@ export class LoginForm {
       error: (err) => {
         console.error('Login fehlgeschlagen', err);
         // Zeige dem User eine Fehlermeldung
-      }
+      },
     });
   }
 }
