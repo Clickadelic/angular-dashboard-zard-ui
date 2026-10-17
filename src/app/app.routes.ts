@@ -1,4 +1,7 @@
 import { Routes } from '@angular/router';
+
+import { authGuard } from './guards/auth.guard';
+
 import { LoginPage } from './pages/auth/login-page/login-page';
 import { AuthLayout } from './layouts/auth-layout/auth-layout';
 import { DashboardLayout } from './layouts/dashboard-layout/dashboard-layout';
@@ -31,14 +34,17 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardLayout,
+	canActivate: [authGuard],
     children: [
       {
         path: '',
         component: DashboardPage,
+		canActivate: [authGuard]
       },
       {
         path: 'component-library',
         component: ComponentLibraryPage,
+		canActivate: [authGuard]
       },
     ],
   },
