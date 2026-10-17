@@ -25,7 +25,7 @@ export class AuthService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.post(`${this.apiUrl}/logout`, {}, { headers }).pipe(
+    return this.http.post(`${this.apiUrl}/auth/logout`, {}, { headers }).pipe(
       tap(() => {
         // Token lokal im Browser löschen
         localStorage.removeItem('auth_token');

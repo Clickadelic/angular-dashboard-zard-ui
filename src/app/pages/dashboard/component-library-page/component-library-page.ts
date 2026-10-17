@@ -9,6 +9,9 @@ import {
   LucideX,
   LucideFileText,
   LucideGauge,
+  LucideSearch,
+  LucideCheck,
+  LucideUser
 } from '@lucide/angular';
 
 @Component({
@@ -23,6 +26,9 @@ import {
     LucideX,
     LucideFileText,
     LucideGauge,
+	LucideSearch,
+	LucideCheck,
+	LucideUser
   ],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',
