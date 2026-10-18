@@ -4,7 +4,7 @@ import { AccordionItem } from '../../../components/ui/accordion/accordion-item/a
 import { AccordionTrigger } from '../../../components/ui/accordion/accordion-trigger/accordion-trigger';
 import { AccordionContent } from '../../../components/ui/accordion/accordion-content/accordion-content';
 import { Modal } from '../../../components/ui/modal/modal';
-import { Tabs } from '../../../components/ui/tabs/tabs/tabs';
+
 import {
   LucideHouse,
   LucideMoveRight,
@@ -31,7 +31,6 @@ import {
     LucideCheck,
     LucideUser,
     Modal,
-    Tabs,
   ],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',

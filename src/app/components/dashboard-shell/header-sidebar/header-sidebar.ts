@@ -4,17 +4,10 @@ import { AuthService } from '../../../services/auth-service';
 import { Dropdown, DropdownItem } from '../../../components/ui/dropdown/dropdown';
 import {
   LucideHouse,
-  LucideMoveRight,
-  LucideX,
-  LucideFileText,
   LucideGauge,
-  LucideSearch,
-  LucideCheck,
-  LucideUser,
   LucideLogOut,
   LucideLayers,
   LucidePanelRightOpen,
-  LucidePanelRightClose,
 } from '@lucide/angular';
 
 @Component({
@@ -25,17 +18,10 @@ import {
     Dropdown,
     DropdownItem,
     LucideHouse,
-    LucideMoveRight,
-    LucideX,
-    LucideFileText,
     LucideGauge,
-    LucideSearch,
-    LucideCheck,
-    LucideUser,
     LucideLogOut,
     LucideLayers,
     LucidePanelRightOpen,
-    LucidePanelRightClose,
   ],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',
