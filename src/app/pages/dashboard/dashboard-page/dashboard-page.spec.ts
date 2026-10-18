@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BarChartComponent } from '../../../components/bar-chart/bar-chart';
+import { BarChartComponent } from '../../../components/charts/bar-chart/bar-chart';
+import { WaveChartComponent } from '../../../components/charts/wave-chart/wave-chart';
 import { DashboardPage } from './dashboard-page';
 
 describe('DashboardPage', () => {
@@ -8,7 +9,7 @@ describe('DashboardPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DashboardPage, BarChartComponent],
+      imports: [DashboardPage, BarChartComponent, WaveChartComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardPage);
