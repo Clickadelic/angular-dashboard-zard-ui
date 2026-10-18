@@ -20,7 +20,7 @@
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.3156 0.0615 241.6169);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: oklch(0.488487 0.19875 26.4108);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -60,6 +60,10 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+
+  --dbk-gray-0: oklch(0.9499 0.0146 102.46);
+  --dbk-gray-1: oklch(0.9197 0.0147 102.47);
+  --dbk-gray-2: oklch(0.8892 0.0149 102.48);
 }
 
 .dark {
@@ -168,9 +172,14 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
-  /* Custom fonts */
+  /* DBK fonts */
   --font-la-belle-aurore: 'La Belle Aurore', cursive;
   --font-bebas-neue: 'Bebas Neue', sans-serif;
+  /* DBK Color Scheme */
+  --color-dbk-gray-0: var(--dbk-gray-0);
+  --color-dbk-gray-1: var(--dbk-gray-1);
+  --color-dbk-gray-2: var(--dbk-gray-2);
+  --color-dbk-gray-3: var(--dbk-gray-3);
 }
 
 @layer base {
@@ -178,6 +187,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-dbk-gray-0 text-foreground;
   }
 }
