@@ -16,7 +16,17 @@ export class AuthService {
   // Login method
   // Takes user credentials and returns an observable for the login request
   login(credentials: { email: string; password: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/auth/login`, credentials);
+	return this.http.post(`${this.apiUrl}/auth/login`, credentials).pipe(
+		tap((response: any) => {
+			// Token und User-Name direkt im LocalStorage sichern
+			if (response.token) {
+				localStorage.setItem('auth_token', response.token);
+			}
+			if (response.user?.name) {
+				localStorage.setItem('user_name', response.user.name);
+			}
+		})
+	);
   }
 
   // Logout method

@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, inject, input, signal } from '@angular/core';
 import { LucideChevronDown, LucideUser } from '@lucide/angular';
+import { AuthService } from '../../../services/auth-service';
 
 @Component({
   selector: 'app-dropdown',
@@ -14,7 +15,7 @@ import { LucideChevronDown, LucideUser } from '@lucide/angular';
         class="flex items-center gap-2 focus:ring-2 focus:ring-ring"
         [attr.aria-expanded]="isOpen()"
       >
-	  	<svg lucideUser class="size-4 -mt-.5"></svg>
+	  	<svg lucideUser class="size-4 -mt-1"></svg>
         <!-- Optionaler Benutzername via Signal Input -->
         @if (userName()) {
           <span>{{ userName() }}</span>
@@ -30,7 +31,7 @@ import { LucideChevronDown, LucideUser } from '@lucide/angular';
       <!-- Dropdown Content (Menü) -->
       @if (isOpen()) {
         <div
-          class="absolute right-0 z-50 mt-2 min-w-48 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80"
+          class="absolute right-0 z-50 mt-2 min-w-36 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80"
         >
           <ng-content select="[dropdown-content]" />
         </div>
