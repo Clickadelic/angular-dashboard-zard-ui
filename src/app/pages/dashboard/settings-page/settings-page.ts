@@ -1,10 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { Modal } from '../../../components/ui/modal/modal';
-import { Tabs } from '../../../components/ui/tabs/tabs/tabs';
 
 @Component({
   selector: 'app-settings-page',
-  imports: [Modal, Tabs],
+  imports: [],
   templateUrl: './settings-page.html',
   styleUrl: './settings-page.css',
 })
