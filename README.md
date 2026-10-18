@@ -112,3 +112,5 @@ export class App {
 ```html
 <svg [lucideIcon]="icon()"></svg>
 ```
+
+Test

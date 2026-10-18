@@ -1,4 +1,8 @@
-<app-header-sidebar></app-header-sidebar>
-<main class="ml-72 my-8 mr-8">
+<!-- Wir übergeben das Signal an die Sidebar und lauschen auf den Toggle -->
+<app-header-sidebar [isOpen]="isSidebarOpen()" (toggle)="toggleSidebar()">
+</app-header-sidebar>
+
+<!-- Der Content-Bereich passt seinen linken Abstand (ml-64 / ml-8) dynamisch an -->
+<main class="my-8 mr-8 transition-all duration-300" [class.ml-72]="isSidebarOpen()" [class.ml-8]="!isSidebarOpen()">
 	<router-outlet></router-outlet>
 </main>
