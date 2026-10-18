@@ -4,5 +4,6 @@
 
 <!-- Der Content-Bereich passt seinen linken Abstand (ml-64 / ml-8) dynamisch an -->
 <main class="my-8 mr-8 transition-all duration-300" [class.ml-72]="isSidebarOpen()" [class.ml-8]="!isSidebarOpen()">
+	<app-breadcrumbs></app-breadcrumbs>
 	<router-outlet></router-outlet>
 </main>

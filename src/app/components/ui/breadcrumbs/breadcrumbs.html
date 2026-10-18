@@ -1,0 +1,33 @@
+<nav aria-label="breadcrumb" class="flex mb-8">
+	<ol class="flex flex-wrap items-center gap-1.5 wrap-break-word text-sm text-gray-500 sm:gap-2.5">
+		<!-- Start / Home -->
+		<li class="inline-flex items-center gap-1.5">
+			<a routerLink="/" class="transition-colors hover:text-gray-950 font-medium">
+				<svg lucideHouse class="size-3.5"></svg>
+			</a>
+		</li>
+		<li role="presentation" aria-hidden="true" class="text-gray-500">
+			<svg lucideChevronRight class="size-3.5"></svg>
+		</li>
+		<li class="inline-flex items-center gap-1.5">
+			<a routerLink="/dashboard" class="transition-colors hover:text-gray-950 font-medium">Dashboard</a>
+		</li>
+
+		@for (breadcrumb of breadcrumbs(); track breadcrumb.url; let last = $last) {
+		<li role="presentation" aria-hidden="true" class="text-gray-500">
+			<svg lucideChevronRight class="size-3.5"></svg>
+		</li>
+		<li class="inline-flex items-center gap-1.5">
+			@if (!last) {
+			<a [routerLink]="breadcrumb.url" class="transition-colors hover:text-gray-950 font-medium">
+				{{ breadcrumb.label }}
+			</a>
+			} @else {
+			<span class="font-normal text-gray-500 cursor-default" aria-current="page">
+				{{ breadcrumb.label }}
+			</span>
+			}
+		</li>
+		}
+	</ol>
+</nav>
