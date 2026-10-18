@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
 import { Dropdown, DropdownItem } from '../../../components/ui/dropdown/dropdown';
@@ -30,21 +30,30 @@ export class HeaderSidebar {
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  // Signal liest den Namen aus dem LocalStorage (Fallback auf 'Benutzer')
+  // Zustand kommt von außen (vom DashboardLayout)
+  isOpen = input.required<boolean>();
+
+  // Event-Emitter für den Klick auf den Toggle-Button
+  toggle = output<void>();
+
   currentUser = signal({
     name: localStorage.getItem('user_name') || 'Benutzer',
   });
 
+  onToggleClick() {
+    this.toggle.emit();
+  }
+
   logout() {
     this.authService.logout().subscribe({
       next: () => this.cleanupAndRedirect(),
-      error: () => this.cleanupAndRedirect(), // Auch bei Serverfehler lokal aufräumen
+      error: () => this.cleanupAndRedirect(),
     });
   }
 
   private cleanupAndRedirect() {
     localStorage.removeItem('auth_token');
     localStorage.removeItem('user_name');
-    this.router.navigate(['/login']); // Passe den Login-Pfad an deine routes.ts an
+    this.router.navigate(['/login']);
   }
 }
