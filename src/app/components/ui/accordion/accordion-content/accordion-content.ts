@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { AccordionItem } from './accordion-item';
+import { AccordionItem } from '../accordion-item/accordion-item';
 
 @Component({
   selector: 'app-accordion-content',
