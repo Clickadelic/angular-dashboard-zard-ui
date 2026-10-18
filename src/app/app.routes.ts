@@ -13,6 +13,7 @@ import { ComponentLibraryPage } from './pages/dashboard/component-library-page/c
 import { IndexPage } from './pages/index-page/index-page';
 import { SettingsPage } from './pages/dashboard/settings-page/settings-page';
 import { CustomersPage } from './pages/dashboard/customers-page/customers-page';
+import { ContractsPage } from './pages/dashboard/contracts-page/contracts-page';
 export const routes: Routes = [
   {
     path: '',
@@ -55,6 +56,11 @@ export const routes: Routes = [
       {
         path: 'kunden',
         component: CustomersPage,
+		canActivate: [authGuard]
+      },
+      {
+        path: 'vertraege',
+        component: ContractsPage,
 		canActivate: [authGuard]
       },
       {
