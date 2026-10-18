@@ -44,3 +44,29 @@
 	</div>
 </div>
 <hr class="border-gray-300 my-8" />
+<div class="flex flex-col gap-3 mb-8">
+	<h3 class="text-2xl font-bebas-neue">Modal</h3>
+	<button (click)="openModal()"
+		class="w-64 hover:cursor-pointer px-4 py-2 bg-primary text-primary-foreground rounded-md">
+		Modal öffnen
+	</button>
+	<app-modal [(isOpen)]="isModalOpen">
+		<div class="space-y-4">
+			<h2 class="text-lg font-semibold">Titel des Modals</h2>
+			<p class="text-sm text-gray-600">
+				Hier kannst du beliebige Inhalte, Formulardaten oder Warnungen platzieren.
+			</p>
+
+			<!-- Footer mit Aktionen -->
+			<div class="flex justify-end gap-2 pt-4 border-t border-border">
+				<button type="button" (click)="isModalOpen.set(false)"
+					class="px-3 py-1.5 border rounded-md text-sm hover:bg-gray-50">
+					Abbrechen
+				</button>
+				<button type="button" class="px-3 py-1.5 bg-primary text-primary-foreground rounded-md text-sm">
+					Speichern
+				</button>
+			</div>
+		</div>
+	</app-modal>
+</div>
