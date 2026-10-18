@@ -4,5 +4,22 @@
 
 <!-- Der Content-Bereich passt seinen linken Abstand (ml-64 / ml-8) dynamisch an -->
 <main class="my-8 mr-8 transition-all duration-300" [class.ml-72]="isSidebarOpen()" [class.ml-8]="!isSidebarOpen()">
+	{{/*  <app-breadcrumb>
+		<app-breadcrumb-item>
+			<app-breadcrumb-link link="/dashboard">Dashboard</app-breadcrumb-link>
+		</app-breadcrumb-item>
+
+		<app-breadcrumb-separator />
+
+		<app-breadcrumb-item>
+			<app-breadcrumb-link link="/dashboard/component-library">Component Library</app-breadcrumb-link>
+		</app-breadcrumb-item>
+
+		<app-breadcrumb-separator />
+
+		<app-breadcrumb-item>
+			<app-breadcrumb-page>Übersicht</app-breadcrumb-page>
+		</app-breadcrumb-item>
+	</app-breadcrumb>  */}}
 	<router-outlet></router-outlet>
 </main>
