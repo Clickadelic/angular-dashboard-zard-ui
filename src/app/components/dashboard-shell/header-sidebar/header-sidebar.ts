@@ -2,14 +2,34 @@ import { Component, inject, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
 import { Dropdown, DropdownItem } from '../../../components/ui/dropdown/dropdown';
-
+import {
+  LucideHouse,
+  LucideMoveRight,
+  LucideX,
+  LucideFileText,
+  LucideGauge,
+  LucideSearch,
+  LucideCheck,
+  LucideUser,
+  LucideGrid, LucideLayers
+} from '@lucide/angular';
 @Component({
   selector: 'app-header-sidebar',
   standalone: true,
   imports: [
-    RouterLink,     // Wichtig für SPA-Navigation ohne Seiten-Reload
-    Dropdown,       // Dein Dropdown-Menü
-    DropdownItem    // Die Menüpunkte
+    RouterLink,
+    Dropdown,
+    DropdownItem,
+    LucideHouse,
+    LucideMoveRight,
+    LucideX,
+    LucideFileText,
+    LucideGauge,
+    LucideSearch,
+    LucideCheck,
+    LucideUser,
+    LucideGrid,
+    LucideLayers
   ],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',

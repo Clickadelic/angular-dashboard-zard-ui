@@ -11,7 +11,7 @@ import { RegisterPage } from './pages/auth/register-page/register-page';
 import { DashboardPage } from './pages/dashboard/dashboard-page/dashboard-page';
 import { ComponentLibraryPage } from './pages/dashboard/component-library-page/component-library-page';
 import { IndexPage } from './pages/index-page/index-page';
-
+import { SettingsPage } from './pages/dashboard/settings-page/settings-page';
 export const routes: Routes = [
   {
     path: '',
@@ -49,6 +49,11 @@ export const routes: Routes = [
       {
         path: 'component-library',
         component: ComponentLibraryPage,
+		canActivate: [authGuard]
+      },
+      {
+        path: 'einstellungen',
+        component: SettingsPage,
 		canActivate: [authGuard]
       },
     ],
