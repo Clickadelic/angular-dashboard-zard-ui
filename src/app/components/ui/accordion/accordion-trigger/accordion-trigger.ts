@@ -4,6 +4,7 @@ import { AccordionItem } from '../accordion-item/accordion-item';
 @Component({
   selector: 'app-accordion-trigger',
   standalone: true,
+  imports: [],
   templateUrl: './accordion-trigger.html',
   styleUrl: './accordion-trigger.css',
 })
