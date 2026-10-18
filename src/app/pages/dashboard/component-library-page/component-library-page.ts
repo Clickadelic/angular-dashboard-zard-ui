@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { Button } from '../../../components/ui/button/button';
-import { AccordionItem } from '../../../components/ui/accordion/accordion-item';
-import { AccordionTrigger } from '../../../components/ui/accordion/accordion-trigger';
-import { AccordionContent } from '../../../components/ui/accordion/accordion-content';
+import { AccordionItem } from '../../../components/ui/accordion/accordion-item/accordion-item';
+import { AccordionTrigger } from '../../../components/ui/accordion/accordion-trigger/accordion-trigger';
+import { AccordionContent } from '../../../components/ui/accordion/accordion-content/accordion-content';
 import { Modal } from '../../../components/ui/modal/modal';
 import { Tabs } from '../../../components/ui/tabs/tabs/tabs';
 import {
@@ -13,7 +13,7 @@ import {
   LucideGauge,
   LucideSearch,
   LucideCheck,
-  LucideUser
+  LucideUser,
 } from '@lucide/angular';
 @Component({
   selector: 'app-component-library-page',
@@ -27,17 +27,17 @@ import {
     LucideX,
     LucideFileText,
     LucideGauge,
-	LucideSearch,
-	LucideCheck,
-	LucideUser,
+    LucideSearch,
+    LucideCheck,
+    LucideUser,
     Modal,
-    Tabs
+    Tabs,
   ],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',
 })
 export class ComponentLibraryPage {
-	isModalOpen = signal(false);
+  isModalOpen = signal(false);
 
   openModal() {
     this.isModalOpen.set(true);
