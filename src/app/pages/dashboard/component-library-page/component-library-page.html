@@ -46,10 +46,9 @@
 <hr class="border-gray-300 my-8" />
 <div class="flex flex-col gap-3 mb-8">
 	<h3 class="text-2xl font-bebas-neue">Modal</h3>
-	<button (click)="openModal()"
-		class="w-64 hover:cursor-pointer px-4 py-2 bg-primary text-primary-foreground rounded-md">
-		Modal öffnen
-	</button>
+	<app-button (click)="openModal()" class="w-64 hover:cursor-pointer px-4 py-2 text-lg">
+		Modalfenster öffnen
+	</app-button>
 	<app-modal [(isOpen)]="isModalOpen">
 		<div class="space-y-4">
 			<h2 class="text-lg font-semibold">Titel des Modals</h2>
@@ -91,6 +90,7 @@
 			Benachrichtigungen
 		</button>
 	</div>
+
 	<!-- Tab Panel 1: Profil -->
 	@if (activeTab() === 'profile') {
 	<div class="w-full rounded-xl border border-border bg-white p-6 shadow-sm space-y-4">

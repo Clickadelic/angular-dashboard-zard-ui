@@ -12,6 +12,7 @@ import { DashboardPage } from './pages/dashboard/dashboard-page/dashboard-page';
 import { ComponentLibraryPage } from './pages/dashboard/component-library-page/component-library-page';
 import { IndexPage } from './pages/index-page/index-page';
 import { SettingsPage } from './pages/dashboard/settings-page/settings-page';
+import { CustomersPage } from './pages/dashboard/customers-page/customers-page';
 export const routes: Routes = [
   {
     path: '',
@@ -49,6 +50,11 @@ export const routes: Routes = [
       {
         path: 'component-library',
         component: ComponentLibraryPage,
+		canActivate: [authGuard]
+      },
+      {
+        path: 'kunden',
+        component: CustomersPage,
 		canActivate: [authGuard]
       },
       {
