@@ -30,14 +30,14 @@
 
 	<div class="w-full p-2">
 		<button (click)="logout()" class="w-full flex items-center gap-1.5 hover:cursor-pointer hover:text-accent">
-			Abmelden
+			<svg lucideLogOut></svg> Abmelden
 		</button>
 	</div>
 </aside>
 <header class="p-3 ml-64 w-auto bg-white flex items-center justify-between border-b border-border">
 	<div class="flex items-center gap-5">
 		<button class="rounded bg-white border p-1">
-			X
+			<svg lucideX></svg>
 		</button>
 		<form class="w-72">
 			<input type="text" id="app-search" name="app-search"
@@ -46,7 +46,7 @@
 	</div>
 
 	<!-- Dropdown-Komponente mit gebundenem Benutzernamen -->
-	<app-dropdown [userName]="currentUser().name" class="mr-4">
+	<app-dropdown [userName]="currentUser().name" class="mr-4 ">
 		<div dropdown-content class="w-48">
 			<app-dropdown-item>Profil</app-dropdown-item>
 			<app-dropdown-item routerLink="/dashboard/settings">Einstellungen</app-dropdown-item>

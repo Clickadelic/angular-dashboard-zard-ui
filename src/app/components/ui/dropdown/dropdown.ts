@@ -6,40 +6,9 @@ import { AuthService } from '../../../services/auth-service';
   selector: 'app-dropdown',
   standalone: true,
   imports: [LucideChevronDown, LucideUser],
-  template: `
-    <div class="relative inline-block text-left">
-      <!-- Semantischer Button-Trigger -->
-      <button
-        type="button"
-        (click)="toggle()"
-        class="flex items-center gap-2 focus:ring-2 focus:ring-ring"
-        [attr.aria-expanded]="isOpen()"
-      >
-	  	<svg lucideUser class="size-4 -mt-1"></svg>
-        <!-- Optionaler Benutzername via Signal Input -->
-        @if (userName()) {
-          <span>{{ userName() }}</span>
-        }
-        
-        <!-- Zusätzlicher individueller Trigger-Inhalt falls benötigt -->
-        <ng-content select="[dropdown-trigger]" />
-
-        <!-- Chevron Icon -->
-        <svg lucideChevronDown class="size-4 transition-transform duration-200" [class.rotate-180]="isOpen()" />
-      </button>
-
-      <!-- Dropdown Content (Menü) -->
-      @if (isOpen()) {
-        <div
-          class="absolute right-0 z-50 mt-2 min-w-36 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80"
-        >
-          <ng-content select="[dropdown-content]" />
-        </div>
-      }
-    </div>
-  `,
+  templateUrl: './dropdown.html',
+  styleUrl: './dropdown.css',
 })
-
 export class Dropdown {
   // Input Signal für den Benutzernamen
   userName = input<string>('');

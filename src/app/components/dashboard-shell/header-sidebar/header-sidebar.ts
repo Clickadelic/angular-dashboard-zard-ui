@@ -11,8 +11,10 @@ import {
   LucideSearch,
   LucideCheck,
   LucideUser,
-  LucideGrid, LucideLayers
+  LucideLogOut,
+  LucideLayers,
 } from '@lucide/angular';
+
 @Component({
   selector: 'app-header-sidebar',
   standalone: true,
@@ -28,8 +30,8 @@ import {
     LucideSearch,
     LucideCheck,
     LucideUser,
-    LucideGrid,
-    LucideLayers
+    LucideLogOut,
+    LucideLayers,
   ],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',
@@ -39,14 +41,14 @@ export class HeaderSidebar {
   private router = inject(Router);
 
   // Signal liest den Namen aus dem LocalStorage (Fallback auf 'Benutzer')
-  currentUser = signal({ 
-    name: localStorage.getItem('user_name') || 'Benutzer' 
+  currentUser = signal({
+    name: localStorage.getItem('user_name') || 'Benutzer',
   });
 
   logout() {
     this.authService.logout().subscribe({
       next: () => this.cleanupAndRedirect(),
-      error: () => this.cleanupAndRedirect() // Auch bei Serverfehler lokal aufräumen
+      error: () => this.cleanupAndRedirect(), // Auch bei Serverfehler lokal aufräumen
     });
   }
 
