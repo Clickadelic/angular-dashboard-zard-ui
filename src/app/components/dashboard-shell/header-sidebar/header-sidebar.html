@@ -1,8 +1,9 @@
-<aside
-	class="fixed top-0 left-0 w-64 p-4 h-full bg-white flex flex-col items-center justify-center border-r border-border">
-	<h1 class="w-full text-center mb-5 p-1 text-xl space-x-2">
-		<span class="font-la-belle-aurore">Toby's</span>
-		<span class="font-bebas-neue">Health Insurance</span>
+<aside class="fixed top-0 left-0 w-64 p-4 h-full bg-white flex flex-col items-center justify-center hover:text-primary">
+	<h1 class="w-full text-center text-xl space-x-2">
+		<a routerLink="/" class="font-bebas-neue flex items-center justify-center gap-2" title="Zur Startseite">
+			<img src="../../../assets/svgs/health-svgrepo-com.svg" alt="Logo" class="h-6" />
+			Health Insurance
+		</a>
 	</h1>
 
 	<nav class="mt-8 w-full flex flex-col items-start grow" aria-label="Hauptnavigation" role="navigation">
@@ -36,8 +37,8 @@
 </aside>
 <header class="p-3 ml-64 w-auto bg-white flex items-center justify-between border-b border-border">
 	<div class="flex items-center gap-5">
-		<button class="rounded bg-white border p-1">
-			<svg lucideX></svg>
+		<button class="rounded bg-base p-1 hover:cursor-pointer hover:text-primary" title="Panel schließen">
+			<svg lucidePanelRightOpen></svg>
 		</button>
 		<form class="w-72">
 			<input type="text" id="app-search" name="app-search"
