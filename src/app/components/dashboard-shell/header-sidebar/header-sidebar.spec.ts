@@ -18,6 +18,13 @@ describe('HeaderSidebar', () => {
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(HeaderSidebar);
+
+    // Hier den required Input-Wert für den Test setzen:
+    fixture.componentRef.setInput('isOpen', true);
+    fixture.detectChanges();
+
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });
