@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { LucideTrendingUp, LucideTrendingDown, LucideMoveRight } from '@lucide/angular';
 
-import { BarChartComponent } from '../../../components/bar-chart/bar-chart';
+import { BarChartComponent } from '../../../components/charts/bar-chart/bar-chart';
+import { WaveChartComponent } from '../../../components/charts/wave-chart/wave-chart';
 
 @Component({
   selector: 'app-dashboard-page',
-  imports: [LucideTrendingUp, LucideTrendingDown, LucideMoveRight, BarChartComponent],
+  imports: [LucideTrendingUp, LucideTrendingDown, LucideMoveRight, BarChartComponent, WaveChartComponent],
   templateUrl: './dashboard-page.html',
   styleUrl: './dashboard-page.css',
 })
