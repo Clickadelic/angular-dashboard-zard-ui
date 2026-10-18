@@ -4,7 +4,7 @@
 	[class.-translate-x-full]="!isOpen()">
 
 	<h1 class="w-full text-center text-xl">
-		<a routerLink="/" class="text-rose-500 font-bebas-neue flex items-center justify-center gap-2"
+		<a routerLink="/" class="text-primary font-bebas-neue flex items-center justify-center gap-2"
 			title="Zur Startseite">
 			<img src="../../../assets/svgs/health-svgrepo-com.svg" alt="Logo" class="h-6" />
 			Health Insurance
@@ -12,23 +12,37 @@
 	</h1>
 
 	<nav class="mt-8 w-full flex flex-col items-start grow" aria-label="Hauptnavigation" role="navigation">
-		<ul class="flex flex-col items-start justify-between w-full gap-1">
+		<ul class="flex flex-col items-start justify-between w-full gap-0.5">
+			<li class="text-gray-400 ml-2 mb-2 text-sm font-bold">Dashboard</li>
 			<li class="w-full">
 				<a routerLink="/"
 					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
-					<svg lucideHouse></svg> Home
+					<svg lucideHouse class="size-4"></svg> Home
 				</a>
 			</li>
 			<li class="w-full">
 				<a routerLink="/dashboard"
 					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
-					<svg lucideGauge></svg> Dashboard
+					<svg lucideGauge class="size-4"></svg> Dashboard
 				</a>
 			</li>
 			<li class="w-full">
 				<a routerLink="/dashboard/component-library"
 					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
-					<svg lucideLayers></svg> Component Library
+					<svg lucideLayers class="size-4"></svg> Component Library
+				</a>
+			</li>
+			<li class="text-gray-400 ml-2 mb-2 text-sm font-bold mt-3">Verwaltung</li>
+			<li class="w-full">
+				<a routerLink="/dashboard/kunden"
+					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
+					<svg lucideUsers class="size-4"></svg> Kunden
+				</a>
+			</li>
+			<li class="w-full">
+				<a routerLink="/dashboard/vertraege"
+					class="flex items-center gap-1.5 w-full rounded py-1 px-2 hover:ml-2 transition-all hover:bg-primary hover:text-primary-foreground">
+					<svg lucideReceiptText class="size-4"></svg> Verträge
 				</a>
 			</li>
 		</ul>
@@ -48,7 +62,7 @@
 	<div class="flex items-center gap-5">
 		<!-- Toggle Button -->
 		<button type="button" (click)="onToggleClick()"
-			class="rounded bg-base p-1 text-base hover:cursor-pointer hover:text-primary transition-transform"
+			class="rounded bg-base p-1 text-base text-gray-400 hover:cursor-pointer hover:text-primary transition-transform"
 			[title]="isOpen() ? 'Panel schließen' : 'Panel öffnen'">
 			<svg lucidePanelRightOpen [class.rotate-180]="!isOpen()"></svg>
 		</button>

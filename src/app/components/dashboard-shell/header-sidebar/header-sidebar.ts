@@ -8,6 +8,8 @@ import {
   LucideLogOut,
   LucideLayers,
   LucidePanelRightOpen,
+  LucideUsers,
+  LucideReceiptText
 } from '@lucide/angular';
 
 @Component({
@@ -22,6 +24,8 @@ import {
     LucideLogOut,
     LucideLayers,
     LucidePanelRightOpen,
+	LucideUsers,
+	LucideReceiptText
   ],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',
