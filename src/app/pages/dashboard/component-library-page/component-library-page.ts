@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Button } from '../../../components/ui/button/button';
 import { AccordionItem } from '../../../components/ui/accordion/accordion-item';
 import { AccordionTrigger } from '../../../components/ui/accordion/accordion-trigger';
@@ -13,6 +13,7 @@ import {
   LucideCheck,
   LucideUser
 } from '@lucide/angular';
+import { Modal } from '../../../components/ui/modal/modal';
 
 @Component({
   selector: 'app-component-library-page',
@@ -28,9 +29,16 @@ import {
     LucideGauge,
 	LucideSearch,
 	LucideCheck,
-	LucideUser
+	LucideUser,
+    Modal
   ],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',
 })
-export class ComponentLibraryPage {}
+export class ComponentLibraryPage {
+	isModalOpen = signal(false);
+
+  openModal() {
+    this.isModalOpen.set(true);
+  }
+}
