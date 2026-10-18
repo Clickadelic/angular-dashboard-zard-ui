@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BreadcrumbSeperator } from './breadcrumb-seperator';
+import { Breadcrumbs } from './breadcrumbs';
 
-describe('BreadcrumbSeperator', () => {
-  let component: BreadcrumbSeperator;
-  let fixture: ComponentFixture<BreadcrumbSeperator>;
+describe('Breadcrumbs', () => {
+  let component: Breadcrumbs;
+  let fixture: ComponentFixture<Breadcrumbs>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BreadcrumbSeperator],
+      imports: [Breadcrumbs],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BreadcrumbSeperator);
+    fixture = TestBed.createComponent(Breadcrumbs);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
