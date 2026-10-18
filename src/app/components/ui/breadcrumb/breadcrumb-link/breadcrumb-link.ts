@@ -5,11 +5,8 @@ import { RouterLink } from '@angular/router';
   selector: 'app-breadcrumb-link',
   standalone: true,
   imports: [RouterLink],
-  template: `
-    <a [routerLink]="link()" class="transition-colors hover:text-gray-950 font-medium">
-      <ng-content />
-    </a>
-  `,
+  templateUrl: './breadcrumb-link.html',
+  styleUrl: './breadcrumb-link.css',
 })
 export class BreadcrumbLink {
   link = input.required<string>();

@@ -11,13 +11,16 @@ describe('BreadcrumbLink', () => {
       imports: [BreadcrumbLink],
       providers: [provideRouter([])],
     }).compileComponents();
-
-    fixture = TestBed.createComponent(BreadcrumbLink);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(BreadcrumbLink);
+
+    // Hier übergeben wir den erforderlichen Input-Wert für den Test:
+    fixture.componentRef.setInput('link', '/dashboard');
+    fixture.detectChanges();
+
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });
