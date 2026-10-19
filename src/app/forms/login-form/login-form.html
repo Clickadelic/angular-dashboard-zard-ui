@@ -1,0 +1,24 @@
+<form class="w-full text-base flex flex-col gap-4 items-center justify-between mb-5" (ngSubmit)="onSubmit()">
+	<div class="flex flex-col gap-2 w-full">
+		<label class="text-accent font-bold">E-Mail:</label>
+		<input type="email" name="email" placeholder="E-Mail" autocomplete="username"
+			class=" placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full"
+			[(ngModel)]="credentials.email" />
+	</div>
+	<div class="flex flex-col gap-2 w-full">
+		<label class="text-accent font-bold">Passwort:</label>
+		<input type="password" name="password" placeholder="Passwort" autocomplete="current-password"
+			class="placeholder:text-gray-400 text-gray-600 border border-gray-300 rounded px-3 py-2 w-full"
+			[(ngModel)]="credentials.password" />
+	</div>
+	<div class="flex gap-2 mr-auto p-2"><input type="checkbox" id="remember-me" name="remember-me" />
+		<label for="remember-me" class="text-gray-400">Angemeldet bleiben</label>
+	</div>
+	<button type="submit" z-button>Anmelden</button>
+</form>
+<p class="text-gray-600 text-center text-sm mb-5">Noch keinen Account? <a href="/auth/registrierung"
+		class="text-primary hover:underline" title="Zur Registrierung">Registrieren</a>.
+</p>
+<p class="text-gray-600 text-center text-sm">Passwort vergessen? <a href="/auth/passwort-vergessen"
+		class="text-primary hover:underline" title="Passwort vergessen">Passwort wiederherstellen</a>.
+</p>
