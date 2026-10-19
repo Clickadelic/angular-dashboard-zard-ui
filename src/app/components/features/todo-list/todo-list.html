@@ -1,0 +1,19 @@
+<div>
+	<h3 class="font-bold text-gray-800 mb-3">Todos</h3>
+	<div class="flex items-center justify-start mb-5">
+		<input #todoInput type="text"
+			class="border border-y border-l placeholder:text-gray-400 px-3 py-2 rounded-tl rounded-bl w-full"
+			placeholder="Neues Todo">
+		<button (click)="addTodo(todoInput.value); todoInput.value=''"
+			class="rounded-tr rounded-br p-2 bg-primary text-white border border-border hover:bg-primary/90 hover:cursor-pointer"><svg
+				lucidePlus></svg></button>
+	</div>
+	<ul class="flex flex-col items-start justify-start gap-2 ml-2">
+		@for (todo of todos(); track todo.id) {
+		<li>{{ todo.title }}</li>
+		} @empty {
+		<li class="text-center">Keine Todos vorhanden</li>
+		}
+
+	</ul>
+</div>
