@@ -1,0 +1,7 @@
+<button z-button zType="ghost" zSize="icon" type="button" aria-label="Darstellung wechseln" (click)="toggleTheme()">
+	@if (darkMode.themeMode() === 'dark') {
+	<ng-icon name="lucideSun" class="size-4" />
+	} @else {
+	<ng-icon name="lucideMoon" class="size-4" />
+	}
+</button>

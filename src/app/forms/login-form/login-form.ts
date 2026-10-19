@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Wichtig für ngModel
 import { Router } from '@angular/router';
-import { AuthService } from '../../../services/auth-service';
-import { AuthLayoutService } from '../../../services/auth-layout-service';
+import { AuthService } from '@/services/auth-service';
+import { AuthLayoutService } from '@/services/auth-layout-service';
 import { ZardButtonComponent } from '@/shared/components/button/button.component';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { LoginForm } from '@/components/forms/login-form/login-form';
+import { LoginForm } from '@/forms/login-form/login-form';
 
 import { AuthLayoutService } from '@/services/auth-layout-service';
 @Component({

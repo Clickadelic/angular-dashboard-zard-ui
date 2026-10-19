@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RegisterService } from '../../../services/register-service';
+import { RegisterService } from '@/services/register-service';
 import { ZardButtonComponent } from '@/shared/components/button/button.component';
 @Component({
   selector: 'app-register-form',

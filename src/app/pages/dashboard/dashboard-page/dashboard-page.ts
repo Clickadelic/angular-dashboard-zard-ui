@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { LucideTrendingUp, LucideTrendingDown, LucideMoveRight } from '@lucide/angular';
 
-import { BarChartComponent } from '@/components/charts/bar-chart/bar-chart';
-import { WaveChartComponent } from '@/components/charts/wave-chart/wave-chart';
-import { TodoList } from '@/components/features/todo-list/todo-list';
+import { BarChartComponent } from '@/shared/components/charts/bar-chart/bar-chart';
+import { WaveChartComponent } from '@/shared/components/charts/wave-chart/wave-chart';
+import { TodoList } from '@/features/todo-list/todo-list';
 
 @Component({
   selector: 'app-dashboard-page',
