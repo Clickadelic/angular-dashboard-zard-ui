@@ -3,12 +3,12 @@ import { FormsModule } from '@angular/forms'; // Wichtig für ngModel
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
 import { AuthLayoutService } from '../../../services/auth-layout-service';
-import { Button } from '../../ui/button/button';
+import { ZardButtonComponent } from '@/shared/components/button/button.component';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [FormsModule, Button],
+  imports: [FormsModule, ZardButtonComponent],
   templateUrl: './login-form.html',
 })
 export class LoginForm {
