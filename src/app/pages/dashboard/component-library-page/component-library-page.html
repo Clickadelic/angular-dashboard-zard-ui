@@ -1,15 +1,25 @@
+<h2 class="text-3xl font-bebas-neue mb-8">Zard UI Components (customized/themed)</h2>
 <div class="flex flex-col gap-3 mb-8">
-	<h2 class="text-2xl font-bebas-neue">Zard UI</h2>
-	<button type="button" z-button>Zard Button</button>
+	<h2 class="text-2xl font-bebas-neue">Button</h2>
+	<div class="flex items-start justify-start gap-3">
+		<button type="button" z-button zShape="circle">Button</button>
+		<button type="button" z-button zType="primary" zShape="circle">Button</button>
+		<button type="button" z-button zType="secondary" zShape="circle">Button</button>
+		<button type="button" z-button zType="destructive" zShape="circle">Button</button>
+		<button type="button" z-button zType="outline" zShape="circle">Button</button>
+		<button type="button" z-button zType="ghost" zShape="circle">Button</button>
+	</div>
 </div>
 <div class="flex flex-col gap-3 mb-8">
 	<h2 class="text-2xl font-bebas-neue">Hover Card</h2>
-	<button [zHoverCard]="content">
-		Hover Here
-	</button>
-	<ng-template #content>
-		<z-hover-card>
-			The Angular Framework - created and maintained by @Zard.
-		</z-hover-card>
-	</ng-template>
+	<div class="flex items-start justify-start gap-3">
+		<button [zHoverCard]="content">
+			Hover Here
+		</button>
+		<ng-template #content>
+			<z-hover-card>
+				The Angular Framework - created and maintained by @Zard.
+			</z-hover-card>
+		</ng-template>
+	</div>
 </div>
