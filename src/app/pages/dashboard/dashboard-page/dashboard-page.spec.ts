@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BarChartComponent } from '../../../components/charts/bar-chart/bar-chart';
-import { WaveChartComponent } from '../../../components/charts/wave-chart/wave-chart';
+import { BarChartComponent } from '../../../shared/components/charts/bar-chart/bar-chart';
+import { WaveChartComponent } from '../../../shared/components/charts/wave-chart/wave-chart';
 import { DashboardPage } from './dashboard-page';
 
 describe('DashboardPage', () => {
