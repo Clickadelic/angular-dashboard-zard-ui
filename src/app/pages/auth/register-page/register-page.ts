@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RegisterForm } from '../../../components/forms/register-form/register-form';
-import { AuthLayoutService } from '../../../services/auth-layout-service';
+import { RegisterForm } from '@/components/forms/register-form/register-form';
+import { AuthLayoutService } from '@/services/auth-layout-service';
 
 @Component({
   selector: 'app-register-page',
