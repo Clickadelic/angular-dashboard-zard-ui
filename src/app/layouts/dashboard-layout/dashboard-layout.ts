@@ -1,7 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderSidebar } from './header-sidebar/header-sidebar';
-import { Breadcrumbs } from '../../components/ui/breadcrumbs/breadcrumbs';
+import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs';
+
 @Component({
   selector: 'app-dashboard-layout',
   standalone: true,

@@ -1,38 +1,9 @@
 import { Component, signal } from '@angular/core';
-// import { Button } from '../../../components/ui/button/button';
-// import { AccordionItem } from '../../../components/ui/accordion/accordion-item/accordion-item';
-// import { AccordionTrigger } from '../../../components/ui/accordion/accordion-trigger/accordion-trigger';
-// import { AccordionContent } from '../../../components/ui/accordion/accordion-content/accordion-content';
-// import { Modal } from '../../../components/ui/modal/modal';
 import { ZardButtonComponent } from '@/shared/components/button/button.component';
-import {
-  LucideHouse,
-  LucideMoveRight,
-  LucideX,
-  LucideFileText,
-  LucideGauge,
-  LucideSearch,
-  LucideCheck,
-  LucideUser,
-} from '@lucide/angular';
+
 @Component({
   selector: 'app-component-library-page',
-  imports: [
-    // Button,
-    // AccordionItem,
-    // AccordionTrigger,
-    // AccordionContent,
-    //Modal,
-    LucideHouse,
-    LucideMoveRight,
-    LucideX,
-    LucideFileText,
-    LucideGauge,
-    LucideSearch,
-    LucideCheck,
-    LucideUser,
-    ZardButtonComponent,
-  ],
+  imports: [ZardButtonComponent],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',
 })

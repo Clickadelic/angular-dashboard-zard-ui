@@ -1,7 +1,7 @@
 import { Component, inject, input, output, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
-import { Dropdown, DropdownItem } from '../../../components/ui/dropdown/dropdown';
+import { ZardDropdownImports } from '@/shared/components/dropdown/dropdown.imports';
 import {
   LucideHouse,
   LucideGauge,
@@ -10,7 +10,7 @@ import {
   LucidePanelRightOpen,
   LucideUsers,
   LucideReceiptText,
-  LucideMailPen
+  LucideMailPen,
 } from '@lucide/angular';
 
 @Component({
@@ -18,16 +18,15 @@ import {
   standalone: true,
   imports: [
     RouterLink,
-    Dropdown,
-    DropdownItem,
+    ZardDropdownImports,
     LucideHouse,
     LucideGauge,
     LucideLogOut,
     LucideLayers,
     LucidePanelRightOpen,
-	LucideUsers,
-	LucideReceiptText,
-	LucideMailPen
+    LucideUsers,
+    LucideReceiptText,
+    LucideMailPen,
   ],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',

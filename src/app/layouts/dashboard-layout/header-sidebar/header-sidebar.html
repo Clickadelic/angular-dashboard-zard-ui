@@ -80,14 +80,10 @@
 	</div>
 
 	<!-- Dropdown-Komponente mit gebundenem Benutzernamen -->
-	<app-dropdown [userName]="currentUser().name" class="mr-4">
-		<div dropdown-content class="w-48">
-			<app-dropdown-item>Profil</app-dropdown-item>
-			<app-dropdown-item routerLink="/dashboard/settings">Einstellungen</app-dropdown-item>
-			<div class="h-px my-1 bg-border"></div>
-			<app-dropdown-item (click)="logout()" class="text-destructive hover:text-destructive">
-				Abmelden
-			</app-dropdown-item>
-		</div>
-	</app-dropdown>
+	<button z-button zType="outline" z-dropdown [zDropdownMenu]="menu">Open</button>
+	<z-dropdown-menu-content #menu="zDropdownMenuContent" class="w-48">
+		<z-dropdown-menu-item>Profile</z-dropdown-menu-item>
+		<z-dropdown-menu-item>Settings</z-dropdown-menu-item>
+		<z-dropdown-menu-item zDisabled>Subscription</z-dropdown-menu-item>
+	</z-dropdown-menu-content>
 </header>

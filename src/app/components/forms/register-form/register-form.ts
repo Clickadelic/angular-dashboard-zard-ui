@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../../services/register-service';
-import { Button } from '../../ui/button/button';
+import { ZardButtonComponent } from '@/shared/components/button/button.component';
 @Component({
   selector: 'app-register-form',
-  imports: [FormsModule, Button],
+  imports: [FormsModule, ZardButtonComponent],
   templateUrl: './register-form.html',
   styleUrl: './register-form.css',
 })

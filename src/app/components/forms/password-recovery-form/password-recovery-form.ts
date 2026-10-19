@@ -3,12 +3,12 @@ import { FormsModule } from '@angular/forms'; // Wichtig für ngModel
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth-service';
 import { AuthLayoutService } from '../../../services/auth-layout-service';
-import { Button } from '../../ui/button/button';
+import { ZardButtonComponent } from '@/shared/components/button/button.component';
 
 @Component({
   selector: 'app-password-recovery-form',
   standalone: true,
-  imports: [FormsModule, Button],
+  imports: [FormsModule, ZardButtonComponent],
   templateUrl: './password-recovery-form.html',
 })
 export class PasswordRecoveryForm {
@@ -30,10 +30,8 @@ export class PasswordRecoveryForm {
     // this.authService.recoverPassword(this.credentials).subscribe({
     //   next: (response) => {
     //     console.log('Passwort zurücksetzen erfolgreich!', response);
-
     //     // Wenn Laravel einen Token zurückgibt (z.B. response.token):
     //     localStorage.setItem('auth_token', response.token);
-
     //     // Weiterleiten nach dem Login (z.B. zum Dashboard)
     //     this.router.navigate(['/dashboard']);
     //   },
