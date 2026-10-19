@@ -9,7 +9,8 @@ import {
   LucideLayers,
   LucidePanelRightOpen,
   LucideUsers,
-  LucideReceiptText
+  LucideReceiptText,
+  LucideMailPen
 } from '@lucide/angular';
 
 @Component({
@@ -25,7 +26,8 @@ import {
     LucideLayers,
     LucidePanelRightOpen,
 	LucideUsers,
-	LucideReceiptText
+	LucideReceiptText,
+	LucideMailPen
   ],
   templateUrl: './header-sidebar.html',
   styleUrl: './header-sidebar.css',

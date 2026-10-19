@@ -1,5 +1,32 @@
 <div class="flex flex-col gap-3 mb-8">
-	<h3 class="text-2xl font-bebas-neue">Accordion</h3>
+	<h2 class="text-2xl font-bebas-neue">Button</h2>
+	<div class="flex gap-3">
+		<app-button>Klick mich</app-button>
+		<app-button variant="accent">Klick mich</app-button>
+		<app-button variant="secondary">Klick mich</app-button>
+		<app-button variant="destructive">Klick mich</app-button>
+		<app-button variant="outline">Klick mich</app-button>
+		<app-button variant="ghost">Klick mich</app-button>
+		<app-button variant="link">Klick mich</app-button>
+	</div>
+</div>
+<hr class="border-gray-300 my-8" />
+<div class="flex flex-col gap-3 mb-8">
+	<h2 class="text-2xl font-bebas-neue">Icons</h2>
+	<div class="inline-flex gap-3 mb-8">
+		<svg lucideHouse></svg>
+		<svg lucideMoveRight></svg>
+		<svg lucideX></svg>
+		<svg lucideFileText></svg>
+		<svg lucideGauge></svg>
+		<svg lucideSearch></svg>
+		<svg lucideCheck></svg>
+		<svg lucideUser></svg>
+	</div>
+</div>
+<hr class="border-gray-300 my-8" />
+<div class="flex flex-col gap-3 mb-8">
+	<h2 class="text-2xl font-bebas-neue">Accordion</h2>
 	<div class="w-full max-w-md">
 		<app-accordion-item>
 			<app-accordion-trigger>Ist das Accordion barrierefrei?</app-accordion-trigger>
@@ -17,61 +44,8 @@
 	</div>
 </div>
 <hr class="border-gray-300 my-8" />
-<div class="flex flex-col gap-3 mb-8">
-	<h3 class="text-2xl font-bebas-neue">Button</h3>
-	<div class="flex gap-3">
-		<app-button>Klick mich</app-button>
-		<app-button variant="accent">Klick mich</app-button>
-		<app-button variant="secondary">Klick mich</app-button>
-		<app-button variant="destructive">Klick mich</app-button>
-		<app-button variant="outline">Klick mich</app-button>
-		<app-button variant="ghost">Klick mich</app-button>
-		<app-button variant="link">Klick mich</app-button>
-	</div>
-</div>
-<hr class="border-gray-300 my-8" />
-<div class="flex flex-col gap-3 mb-8">
-	<h3 class="text-2xl font-bebas-neue">Icons</h3>
-	<div class="inline-flex gap-3 mb-8">
-		<svg lucideHouse></svg>
-		<svg lucideMoveRight></svg>
-		<svg lucideX></svg>
-		<svg lucideFileText></svg>
-		<svg lucideGauge></svg>
-		<svg lucideSearch></svg>
-		<svg lucideCheck></svg>
-		<svg lucideUser></svg>
-	</div>
-</div>
-<hr class="border-gray-300 my-8" />
-<div class="flex flex-col gap-3 mb-8">
-	<h3 class="text-2xl font-bebas-neue">Modal</h3>
-	<app-button (click)="openModal()" class="w-64 hover:cursor-pointer px-4 py-2 text-lg">
-		Modalfenster öffnen
-	</app-button>
-	<app-modal [(isOpen)]="isModalOpen">
-		<div class="space-y-4">
-			<h2 class="text-lg font-semibold">Titel des Modals</h2>
-			<p class="text-sm text-gray-600">
-				Hier kannst du beliebige Inhalte, Formulardaten oder Warnungen platzieren.
-			</p>
-
-			<!-- Footer mit Aktionen -->
-			<div class="flex justify-end gap-2 pt-4 border-t border-border">
-				<button type="button" (click)="isModalOpen.set(false)"
-					class="px-3 py-1.5 border rounded-md text-sm hover:bg-gray-50">
-					Abbrechen
-				</button>
-				<button type="button" class="px-3 py-1.5 bg-primary text-primary-foreground rounded-md text-sm">
-					Speichern
-				</button>
-			</div>
-		</div>
-	</app-modal>
-</div>
-<hr class="border-gray-300 my-8" />
 <div class="flex flex-col gap-3 mb-8 max-w-md items-start justify-between">
-	<h3 class="text-2xl font-bebas-neue">Tabs</h3>
+	<h2 class="text-2xl font-bebas-neue">Tabs</h2>
 	<!-- Tab-Navigationsleiste (shadcn-Stil) -->
 	<div class="inline-flex h-10 items-center justify-center rounded-lg bg-gray-100 p-1 text-gray-500">
 		<button type="button" (click)="setTab('profile')" [class.bg-white]="activeTab() === 'profile'"
@@ -146,4 +120,31 @@
 		</div>
 	</div>
 	}
+</div>
+<hr class="border-gray-300 my-8" />
+
+<div class="flex flex-col gap-3 mb-8">
+	<h2 class="text-2xl font-bebas-neue">Modal</h2>
+	<app-button (click)="openModal()" class="w-64 hover:cursor-pointer px-4 py-2 text-lg">
+		Modalfenster öffnen
+	</app-button>
+	<app-modal [(isOpen)]="isModalOpen">
+		<div class="space-y-4">
+			<h2 class="text-lg font-semibold">Titel des Modals</h2>
+			<p class="text-sm text-gray-600">
+				Hier kannst du beliebige Inhalte, Formulardaten oder Warnungen platzieren.
+			</p>
+
+			<!-- Footer mit Aktionen -->
+			<div class="flex justify-end gap-2 pt-4 border-t border-border">
+				<button type="button" (click)="isModalOpen.set(false)"
+					class="px-3 py-1.5 border rounded-md text-sm hover:bg-gray-50">
+					Abbrechen
+				</button>
+				<button type="button" class="px-3 py-1.5 bg-primary text-primary-foreground rounded-md text-sm">
+					Speichern
+				</button>
+			</div>
+		</div>
+	</app-modal>
 </div>
