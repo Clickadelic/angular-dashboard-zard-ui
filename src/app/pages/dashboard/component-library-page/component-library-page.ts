@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { ZardButtonComponent } from '@/shared/components/button/button.component';
-
+import {
+  ZardHoverCardComponent,
+  ZardHoverCardDirective,
+} from '@/shared/components/hover-card/hover-card.component';
 @Component({
   selector: 'app-component-library-page',
-  imports: [ZardButtonComponent],
+  imports: [ZardButtonComponent, ZardHoverCardComponent, ZardHoverCardDirective],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',
 })
