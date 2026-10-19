@@ -1,20 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderSidebar } from './header-sidebar/header-sidebar';
-import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs';
+import { ZardSidebarImports } from '@/shared/components/sidebar/sidebar.imports';
 
 @Component({
   selector: 'app-dashboard-layout',
   standalone: true,
-  imports: [HeaderSidebar, RouterOutlet, Breadcrumbs],
+  imports: [RouterOutlet, ZardSidebarImports],
   templateUrl: './dashboard-layout.html',
-  styleUrl: './dashboard-layout.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardLayout {
-  // Der Zustand wohnt jetzt zentral im Layout
-  isSidebarOpen = signal(true);
-
-  toggleSidebar() {
-    this.isSidebarOpen.update((v) => !v);
-  }
-}
+export class DashboardLayout {}

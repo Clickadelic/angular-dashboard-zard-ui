@@ -1,64 +1,60 @@
-import { Component, inject, input, output, signal } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../../services/auth-service';
-import { ZardDropdownImports } from '@/shared/components/dropdown/dropdown.imports';
-import {
-  LucideHouse,
-  LucideGauge,
-  LucideLogOut,
-  LucideLayers,
-  LucidePanelRightOpen,
-  LucideUsers,
-  LucideReceiptText,
-  LucideMailPen,
-} from '@lucide/angular';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+import { ZardSidebarImports } from '@/shared/components/sidebar/sidebar.imports';
 
 @Component({
-  selector: 'app-header-sidebar',
-  standalone: true,
-  imports: [
-    RouterLink,
-    ZardDropdownImports,
-    LucideHouse,
-    LucideGauge,
-    LucideLogOut,
-    LucideLayers,
-    LucidePanelRightOpen,
-    LucideUsers,
-    LucideReceiptText,
-    LucideMailPen,
-  ],
-  templateUrl: './header-sidebar.html',
-  styleUrl: './header-sidebar.css',
+  selector: 'z-demo-sidebar-structure',
+  imports: [ZardSidebarImports],
+  template: `
+    <z-sidebar-provider
+      class="relative h-104 min-h-0 transform-gpu overflow-hidden rounded-xl border"
+    >
+      <z-sidebar zCollapsible="none" class="border-r">
+        <div z-sidebar-header class="border-b border-dashed">
+          <span class="text-muted-foreground text-xs font-medium">SidebarHeader</span>
+        </div>
+
+        <z-sidebar-content>
+          <div z-sidebar-group class="border-b border-dashed">
+            <div z-sidebar-group-label>SidebarGroup</div>
+
+            <div z-sidebar-group-content>
+              <ul z-sidebar-menu>
+                <li z-sidebar-menu-item>
+                  <button z-sidebar-menu-button>SidebarMenuItem</button>
+                </li>
+                <li z-sidebar-menu-item>
+                  <button z-sidebar-menu-button>SidebarMenuItem</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div z-sidebar-group class="border-b border-dashed">
+            <div z-sidebar-group-label>SidebarGroup</div>
+
+            <div z-sidebar-group-content>
+              <ul z-sidebar-menu>
+                <li z-sidebar-menu-item>
+                  <button z-sidebar-menu-button>SidebarMenuItem</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </z-sidebar-content>
+
+        <div z-sidebar-footer class="border-t border-dashed">
+          <span class="text-muted-foreground text-xs font-medium">SidebarFooter</span>
+        </div>
+      </z-sidebar>
+
+      <main z-sidebar-inset class="p-4">
+        <div class="flex h-full items-center justify-center rounded-xl border border-dashed">
+          <span class="text-muted-foreground text-xs font-medium">SidebarInset</span>
+        </div>
+      </main>
+    </z-sidebar-provider>
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderSidebar {
-  private authService = inject(AuthService);
-  private router = inject(Router);
-
-  // Zustand kommt von außen (vom DashboardLayout)
-  isOpen = input.required<boolean>();
-
-  // Event-Emitter für den Klick auf den Toggle-Button
-  toggle = output<void>();
-
-  currentUser = signal({
-    name: localStorage.getItem('user_name') || 'Benutzer',
-  });
-
-  onToggleClick() {
-    this.toggle.emit();
-  }
-
-  logout() {
-    this.authService.logout().subscribe({
-      next: () => this.cleanupAndRedirect(),
-      error: () => this.cleanupAndRedirect(),
-    });
-  }
-
-  private cleanupAndRedirect() {
-    localStorage.removeItem('auth_token');
-    localStorage.removeItem('user_name');
-    this.router.navigate(['/login']);
-  }
-}
+export class ZardDemoSidebarStructureComponent {}

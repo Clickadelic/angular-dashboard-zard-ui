@@ -1,9 +1,60 @@
-<!-- Wir übergeben das Signal an die Sidebar und lauschen auf den Toggle -->
-<app-header-sidebar [isOpen]="isSidebarOpen()" (toggle)="toggleSidebar()">
-</app-header-sidebar>
+<z-sidebar-provider>
+	<z-sidebar zCollapsible="icon">
 
-<!-- Der Content-Bereich passt seinen linken Abstand (ml-64 / ml-8) dynamisch an -->
-<main class="my-8 mr-8 transition-all duration-300" [class.ml-72]="isSidebarOpen()" [class.ml-8]="!isSidebarOpen()">
-	<app-breadcrumbs></app-breadcrumbs>
-	<router-outlet></router-outlet>
-</main>
+		<!-- Logo / Header -->
+		<div z-sidebar-header>
+			<a routerLink="/dashboard" class="flex items-center gap-2 p-2 font-semibold">
+				<span class="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+					D
+				</span>
+				<span>Dashboard</span>
+			</a>
+		</div>
+
+		<!-- Navigation -->
+		<z-sidebar-content>
+			<div z-sidebar-group>
+				<div z-sidebar-group-label>
+					Übersicht
+				</div>
+
+				<div z-sidebar-group-content>
+					<ul z-sidebar-menu>
+						<li z-sidebar-menu-item>
+							<a z-sidebar-menu-button routerLink="/dashboard" zTooltip="Dashboard">
+								Dashboard
+							</a>
+						</li>
+
+						<li z-sidebar-menu-item>
+							<a z-sidebar-menu-button routerLink="/dashboard/settings" zTooltip="Einstellungen">
+								Einstellungen
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</z-sidebar-content>
+
+		<!-- Footer -->
+		<div z-sidebar-footer>
+			<div class="p-2 text-sm text-muted-foreground">
+				Angemeldet
+			</div>
+		</div>
+
+		<button z-sidebar-rail aria-label="Sidebar umschalten"></button>
+	</z-sidebar>
+
+	<!-- Main content -->
+	<main z-sidebar-inset class="min-h-svh">
+		<header class="flex h-14 items-center gap-2 border-b px-4">
+			<button z-sidebar-trigger aria-label="Sidebar umschalten"></button>
+			<span class="font-medium">Dashboard</span>
+		</header>
+
+		<div class="p-6">
+			<router-outlet />
+		</div>
+	</main>
+</z-sidebar-provider>

@@ -12,7 +12,25 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20261018" />
 	<meta name="apple-mobile-web-app-title" content="Health" />
 	<link rel="manifest" href="/site.webmanifest?v=20261018" />
-</head>
+
+    <script>
+      (function () {
+        const html = document.documentElement;
+
+        try {
+          const theme = localStorage.theme;
+          const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+
+          const isSystem = theme === 'system' || !('theme' in localStorage);
+          const isDark = theme === 'dark' || (isSystem && prefersDark);
+          html.classList.add('scheme-light-dark');
+          html.classList.toggle('dark', isDark);
+          html.setAttribute('data-theme', theme ?? 'system');
+        } catch (_) {}
+      })();
+    </script>
+
+  </head>
 
 <body>
 	<app-root></app-root>
