@@ -1,0 +1,10 @@
+.bg-hero-image {
+  position: relative;
+  background-image: url('../../../assets/images/gabin-vallet-J154nEkpzlQ-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-hero-mask {
+  background-image: url('../../../assets/images/hero-mask.svg');
+}
