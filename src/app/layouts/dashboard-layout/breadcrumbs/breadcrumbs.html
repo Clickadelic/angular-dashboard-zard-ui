@@ -2,7 +2,7 @@
 	<ol class="flex flex-wrap items-center gap-1.5 wrap-break-word text-sm text-gray-500 sm:gap-2.5">
 		<!-- Start / Home -->
 		<li class="inline-flex items-center gap-1.5">
-			<a routerLink="/" class="transition-colors hover:text-gray-950 font-medium">
+			<a routerLink="/" class="transition-colors hover:text-primary dark:hover:text-primary font-medium">
 				<svg lucideHouse class="size-3.5"></svg>
 			</a>
 		</li>
@@ -10,7 +10,8 @@
 			<svg lucideChevronRight class="size-3.5"></svg>
 		</li>
 		<li class="inline-flex items-center gap-1.5">
-			<a routerLink="/dashboard" class="transition-colors hover:text-gray-950 font-medium">Dashboard</a>
+			<a routerLink="/dashboard"
+				class="transition-colors hover:text-primary dark:hover:text-primary font-medium">Dashboard</a>
 		</li>
 
 		@for (breadcrumb of breadcrumbs(); track breadcrumb.url; let last = $last) {
@@ -19,7 +20,8 @@
 		</li>
 		<li class="inline-flex items-center gap-1.5">
 			@if (!last) {
-			<a [routerLink]="breadcrumb.url" class="transition-colors hover:text-gray-950 font-medium">
+			<a [routerLink]="breadcrumb.url"
+				class="transition-colors hover:text-primary dark:hover:text-primary font-medium">
 				{{ breadcrumb.label }}
 			</a>
 			} @else {

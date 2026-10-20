@@ -47,14 +47,15 @@
 	<!-- Main content -->
 	<main z-sidebar-inset class="min-h-svh">
 		<header class="bg-white dark:bg-sidebar flex h-14 items-center justify-between gap-2 px-4">
-			<div><button z-sidebar-trigger aria-label="Sidebar umschalten"></button>
-				<span class="font-medium">Health Insurance</span>
+			<div class="flex items-center justify-between gap-5">
+				<button z-sidebar-trigger aria-label="Sidebar umschalten"></button>
 			</div>
 			<div>
 				<app-dark-mode-toggle></app-dark-mode-toggle>
 			</div>
 		</header>
 		<div class="p-6">
+			<app-breadcrumbs class="mt-6"></app-breadcrumbs>
 			<router-outlet />
 		</div>
 	</main>
