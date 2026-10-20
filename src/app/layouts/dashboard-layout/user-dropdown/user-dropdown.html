@@ -1,0 +1,23 @@
+<button type="button" z-button zType="outline" z-dropdown [zDropdownMenu]="menu">
+	@if (currentUser()) {
+	<span>{{ currentUser().name }}</span>
+	} @else {
+	<span>Benutzer</span>
+	}
+</button>
+<z-dropdown-menu-content #menu="zDropdownMenuContent" class="w-56">
+	<z-dropdown-menu-label>Mein Account</z-dropdown-menu-label>
+	<z-dropdown-menu-item (click)="log('Profile')">
+		Profil
+		<z-dropdown-menu-shortcut>⇧⌘P</z-dropdown-menu-shortcut>
+	</z-dropdown-menu-item>
+	<z-dropdown-menu-item (click)="log('Einstellungen')">
+		Einstellungen
+		<z-dropdown-menu-shortcut>⌘S</z-dropdown-menu-shortcut>
+	</z-dropdown-menu-item>
+	<z-dropdown-menu-separator />
+	<z-dropdown-menu-item (click)="log('Abmelden')">
+		Abmelden
+		<z-dropdown-menu-shortcut>⇧⌘Q</z-dropdown-menu-shortcut>
+	</z-dropdown-menu-item>
+</z-dropdown-menu-content>

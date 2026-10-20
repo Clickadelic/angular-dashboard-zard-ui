@@ -114,23 +114,19 @@
 
 	<!-- Hauptbereich -->
 	<main z-sidebar-inset class="flex min-h-dvh flex-col">
-
-		<header class="bg-white flex h-14 shrink-0 items-center gap-3 px-4 border-b">
+		<header class="bg-white dark:bg-sidebar flex h-14 shrink-0 items-center gap-3 px-4 border-b">
 			<button z-sidebar-trigger aria-label="Toggle Sidebar"></button>
-
 			<div class="flex-1">
 				<form class="max-w-72">
 					<input type="text" placeholder="Search... STRG + K" class="w-full rounded border px-2 py-1" />
 				</form>
 			</div>
+			<app-user-dropdown></app-user-dropdown>
 			<app-dark-mode-toggle></app-dark-mode-toggle>
 		</header>
-
 		<section class="flex-1 p-6">
 			<app-breadcrumbs></app-breadcrumbs>
 			<router-outlet />
 		</section>
-
 	</main>
-
 </z-sidebar-provider>
