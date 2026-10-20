@@ -56,28 +56,85 @@
 				</nav>
 			</div>
 		</div>
-		<div class="w-full relative">
-			<div class="w-full relative z-10 h-144 bg-hero-image">
-				<div class="container mx-auto max-w-317 flex items-center justify-between px-4">
-					<div class="bg-primary-medium">
-						<h2 class="text-white">Willkommen beim Versicherer des Jahres</h2>
-					</div>
+
+		<div class="w-full relative z-10 h-144 bg-hero-image">
+			<div class="container mx-auto max-w-317 flex items-center justify-between px-4">
+				<div class="my-48 mb-5">
+					<h2 class="text-white p-3 bg-primary-medium text-4xl font-bebas-neue">Willkommen beim
+						Versicherer
+						des
+						Jahres</h2>
+					<h3 class="text-4xl font-bold text-white text-shadow-xl">Das Füreinander zählt</h3>
 				</div>
 			</div>
-			<div class="relative -mt-52 z-20 w-full h-62 bg-hero-mask bg-cover bg-center"></div>
+
 		</div>
+		<div class="relative -mt-52 z-20 w-full h-62 pt-36 bg-hero-mask bg-cover bg-center">
+			<div class="text-center relative z-60">
+				<a href="/"
+					class="text-primary-medium text-center bg-white py-3 px-6 border border-primary rounded-full mt-5 inline-block hover:underline">Beratungstermin
+					vereinbaren</a>
+			</div>
+		</div>
+
 	</header>
-	<div class="bg-primary-dark w-full grow">
+	<div class="bg-primary-dark w-full grow h-200">
 		<div class="container mx-auto px-4 flex">
 			Content
 		</div>
 	</div>
 	<div class="bg-base-dark w-full">
 		<div class="container mx-auto h-124 px-4 flex">
-			Content
+			<ng-content></ng-content>
 		</div>
 	</div>
-	<footer class="w-full h-8 bg-primary-medium text-white">
-		<p>Footer</p>
+	<footer class="w-full py-6 bg-primary-medium text-white">
+		<div class="container mx-auto max-w-317 flex items-center justify-between px-4">
+			<p>&copy; 2024 Health Insurance Group.</p>
+			<nav>
+				<ul class="flex gap-5">
+					<li>
+						<a href="/impressum" class="flex gap-1">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-caret-right-fill mt-0.5 scale-75" viewBox="0 0 16 16">
+								<path
+									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+							</svg>
+							Impressum
+						</a>
+					</li>
+					<li>
+						<a href="/datenschutz" class="flex gap-1">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-caret-right-fill mt-0.5 scale-75" viewBox="0 0 16 16">
+								<path
+									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+							</svg>
+							Datenschutz
+						</a>
+					</li>
+					<li>
+						<a href="/hinweisgebersystem" class="flex gap-1">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-caret-right-fill mt-0.5 scale-75" viewBox="0 0 16 16">
+								<path
+									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+							</svg>
+							Hinweisgebersystem
+						</a>
+					</li>
+					<li>
+						<a href="/privatsphaere-einstellungen" class="flex gap-1">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-caret-right-fill mt-0.5 scale-75" viewBox="0 0 16 16">
+								<path
+									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+							</svg>
+							Privatsphäre-Einstellungen
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</footer>
 </div>
