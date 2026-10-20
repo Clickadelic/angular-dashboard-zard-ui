@@ -4,9 +4,7 @@
 		<!-- Logo / Header -->
 		<div z-sidebar-header>
 			<a routerLink="/dashboard" class="flex items-center gap-2 p-2 font-semibold">
-				<span class="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-					D
-				</span>
+				<img src="../../assets/images/favicon-96x96.png" class="size-8" alt="Health Insurance Logo" />
 				<span>Health Insurance</span>
 			</a>
 		</div>
@@ -28,7 +26,7 @@
 
 						<li z-sidebar-menu-item>
 							<a z-sidebar-menu-button routerLink="/dashboard/settings" zTooltip="Einstellungen">
-								Einstellungen
+								Component Library
 							</a>
 						</li>
 					</ul>
@@ -48,12 +46,14 @@
 
 	<!-- Main content -->
 	<main z-sidebar-inset class="min-h-svh">
-		<header class="flex h-14 items-center gap-2 border-b px-4">
-			<button z-sidebar-trigger aria-label="Sidebar umschalten"></button>
-			<span class="font-medium">Health Insurance</span>
-			<app-dark-mode-toggle></app-dark-mode-toggle>
+		<header class="bg-white dark:bg-sidebar flex h-14 items-center justify-between gap-2 px-4">
+			<div><button z-sidebar-trigger aria-label="Sidebar umschalten"></button>
+				<span class="font-medium">Health Insurance</span>
+			</div>
+			<div>
+				<app-dark-mode-toggle></app-dark-mode-toggle>
+			</div>
 		</header>
-
 		<div class="p-6">
 			<router-outlet />
 		</div>
