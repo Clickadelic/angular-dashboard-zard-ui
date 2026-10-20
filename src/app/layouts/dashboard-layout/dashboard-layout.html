@@ -1,62 +1,118 @@
-<z-sidebar-provider>
+<z-sidebar-provider zDefaultOpen="true" class="min-h-dvh border">
 	<z-sidebar zCollapsible="icon">
 
-		<!-- Logo / Header -->
-		<div z-sidebar-header>
-			<a routerLink="/dashboard" class="flex items-center gap-2 p-2 font-semibold">
-				<img src="../../assets/images/favicon-96x96.png" class="size-8" alt="Health Insurance Logo" />
-				<span>Health Insurance</span>
+		<!-- Header / Logo -->
+		<z-sidebar-header>
+			<a routerLink="/dashboard" class="flex items-center gap-2 px-2 py-2">
+				<img src="/assets/images/logo.svg" alt="Logo" class="size-8 shrink-0" />
+
+				<span class="truncate font-semibold">
+					WebDev HQ
+				</span>
 			</a>
-		</div>
+		</z-sidebar-header>
 
 		<!-- Navigation -->
 		<z-sidebar-content>
+
+			<!-- Gruppe: Workspace -->
 			<div z-sidebar-group>
-				<div z-sidebar-group-label>
-					Übersicht
-				</div>
+				<div z-sidebar-group-label>Workspace</div>
 
 				<div z-sidebar-group-content>
 					<ul z-sidebar-menu>
-						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard" zTooltip="Dashboard">
-								Dashboard
-							</a>
-						</li>
 
 						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard/settings" zTooltip="Einstellungen">
-								Component Library
+							<a z-sidebar-menu-button routerLink="/dashboard" zTooltip="Dashboard">
+								<ng-icon name="lucideHouse" />
+								<span>Dashboard</span>
 							</a>
 						</li>
 					</ul>
 				</div>
 			</div>
+
+			<!-- Gruppe: Development -->
+			<div z-sidebar-group>
+				<div z-sidebar-group-label>Development</div>
+
+				<div z-sidebar-group-content>
+					<ul z-sidebar-menu>
+
+						<li z-sidebar-menu-item>
+							<a z-sidebar-menu-button routerLink="/dashboard/settings" zTooltip="Development">
+								<ng-icon name="lucideInbox" />
+								<span>Einstellungen</span>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<!-- Gruppe: Administration -->
+			<div z-sidebar-group>
+				<div z-sidebar-group-label>Administration</div>
+
+				<div z-sidebar-group-content>
+					<ul z-sidebar-menu>
+
+						<li z-sidebar-menu-item>
+							<a z-sidebar-menu-button routerLink="/dashboard/administration" zTooltip="Administration">
+								<ng-icon name="lucideSettings" />
+								<span>Administration</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
 		</z-sidebar-content>
 
-		<!-- Footer -->
-		<div z-sidebar-footer>
-			<div class="p-2 text-sm text-muted-foreground">
-				Angemeldet
-			</div>
-		</div>
+		<!-- Footer / Benutzermenü -->
+		<z-sidebar-footer>
+			<div z-sidebar-menu>
+				<div z-sidebar-menu-item>
 
-		<button z-sidebar-rail aria-label="Sidebar umschalten"></button>
+					<button z-sidebar-menu-button zTooltip="Benutzername" class="h-auto py-2">
+						<div
+							class="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+							TH
+						</div>
+
+						<div class="flex min-w-0 flex-1 flex-col items-start">
+							<span class="truncate text-sm font-medium">
+								Tobias
+							</span>
+
+							<span class="truncate text-xs text-muted-foreground">
+								tobiasATexample.com
+							</span>
+						</div>
+
+						<ng-icon name="lucideChevronsUpDown" />
+					</button>
+
+				</div>
+			</div>
+		</z-sidebar-footer>
+
 	</z-sidebar>
 
-	<!-- Main content -->
-	<main z-sidebar-inset class="min-h-svh">
-		<header class="bg-white dark:bg-sidebar flex h-14 items-center justify-between gap-2 px-4">
-			<div class="flex items-center justify-between gap-5">
-				<button z-sidebar-trigger aria-label="Sidebar umschalten"></button>
-			</div>
-			<div>
-				<app-dark-mode-toggle></app-dark-mode-toggle>
+	<!-- Hauptbereich -->
+	<main z-sidebar-inset class="flex min-h-dvh flex-col">
+
+		<header class="flex h-14 shrink-0 items-center gap-3 border-b px-4">
+			<button z-sidebar-trigger aria-label="Toggle Sidebar"></button>
+
+			<div class="flex-1">
+				<h1 class="text-lg font-semibold">Dashboard</h1>
 			</div>
 		</header>
-		<div class="p-6">
-			<app-breadcrumbs class="mt-6"></app-breadcrumbs>
+
+		<section class="flex-1 p-4">
 			<router-outlet />
-		</div>
+		</section>
+
 	</main>
 </z-sidebar-provider>
