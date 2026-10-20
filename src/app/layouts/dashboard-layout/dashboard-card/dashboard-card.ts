@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ZardCardImports } from '@/shared/components/card/card.imports';
 
 @Component({
@@ -9,4 +9,8 @@ import { ZardCardImports } from '@/shared/components/card/card.imports';
   styleUrl: './dashboard-card.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardCardComponent {}
+export class DashboardCardComponent {
+  title = input<string>();
+  description = input<string>('');
+  footer = input<string>('');
+}

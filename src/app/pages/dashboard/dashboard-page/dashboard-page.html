@@ -1,6 +1,5 @@
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-	<div class="bg-white rounded p-5 shadow">
-		<h3 class="text-md font-semibold text-muted-foreground mb-3">Kundenaufträge diesen Monat</h3>
+	<app-dashboard-card title="Kundenaufträge">
 		<div class="flex items-center justify-between mb-3">
 			<h4 class="text-gray-800 font-bold text-xl">4.432</h4>
 			<div class="flex items-center justify-between gap-2 px-2 py-1 bg-primary/20 rounded border border-primary">
@@ -10,9 +9,8 @@
 		</div>
 		<p class="text-muted-foreground text-sm">Es wurden <span class="text-primary">4.432</span>
 			Kundenaufträge erfasst.</p>
-	</div>
-	<div class="bg-white rounded p-5 shadow">
-		<h3 class="text-md font-semibold text-muted-foreground mb-3">Versicherungsnehmer insgesamt</h3>
+	</app-dashboard-card>
+	<app-dashboard-card title="Versicherungsnehmer insgesamt">
 		<div class="flex items-center justify-between mb-3">
 			<h4 class="text-gray-800 font-bold text-xl">54.232</h4>
 			<div
@@ -23,9 +21,8 @@
 		</div>
 		<p class="text-muted-foreground text-sm">Diesen Monat wurden <span class="text-emerald-800">3.525</span>
 			Neukunden versichert.</p>
-	</div>
-	<div class="bg-white rounded p-5 shadow">
-		<h3 class="text-md font-semibold text-muted-foreground mb-3">Kundenanliegen insgesamt</h3>
+	</app-dashboard-card>
+	<app-dashboard-card title="Kundenanfragen insgesamt">
 		<div class="flex items-center justify-between mb-3">
 			<h4 class="text-gray-800 font-bold text-xl">2.432</h4>
 			<div
@@ -36,9 +33,8 @@
 		</div>
 		<p class="text-muted-foreground text-sm">Es wurden <span class="text-destructive">345</span>
 			weniger Krankheitsfälle gemeldet.</p>
-	</div>
-	<div class="bg-white rounded p-5 shadow">
-		<h3 class="text-md font-semibold text-muted-foreground mb-3">Vertragsänderungen</h3>
+	</app-dashboard-card>
+	<app-dashboard-card title="Vertragsänderungen">
 		<div class="flex items-center justify-between mb-3">
 			<h4 class="text-gray-800 font-bold text-xl">1.862</h4>
 			<div
@@ -49,9 +45,22 @@
 		</div>
 		<p class="text-muted-foreground text-sm">Diesen Monat wurden <span class="text-amber-600">932</span>
 			Verträge geändert.</p>
-	</div>
+	</app-dashboard-card>
 </div>
-
-<div class="grid grid-cols-9 gap-8">
-	<app-dashboard-card title="Dings" description="Bums">Irgendwas</app-dashboard-card>
+<div class="grid grid-cols-10 gap-8">
+	<div class="col-span-3">
+		<app-dashboard-card title="Statistiken">
+			<app-bar-chart></app-bar-chart>
+		</app-dashboard-card>
+	</div>
+	<div class="col-span-3">
+		<app-dashboard-card title="Statistiken">
+			<app-wave-chart></app-wave-chart>
+		</app-dashboard-card>
+	</div>
+	<div class="col-span-4">
+		<app-dashboard-card class="h-full">
+			<app-todo-list></app-todo-list>
+		</app-dashboard-card>
+	</div>
 </div>
