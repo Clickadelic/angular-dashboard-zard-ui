@@ -1,12 +1,12 @@
-<z-sidebar-provider zDefaultOpen="true" class="min-h-dvh border">
+<z-sidebar-provider zDefaultOpen="true" class="min-h-dvh">
 	<z-sidebar zCollapsible="icon">
 
 		<!-- Header / Logo -->
 		<z-sidebar-header>
-			<a routerLink="/dashboard" class="flex items-center gap-2 px-2 py-2">
-				<img src="../../../assets/images/favicon-96x96.png" alt="Logo" class="size-8 shrink-0" />
+			<a routerLink="/dashboard" class="flex items-center gap-2 px-2 py-2" title="Dashboard">
+				<ng-icon name="lucideHeartPulse" class="text-primary size-10 shrink-0 -mt-1" />
 
-				<span class="truncate font-semibold">
+				<span class="truncate font-semibold font-bebas-neue text-xl text-primary leading-snug">
 					Health Insurance
 				</span>
 			</a>
@@ -24,25 +24,32 @@
 
 						<li z-sidebar-menu-item>
 							<a z-sidebar-menu-button routerLink="/dashboard" zTooltip="Dashboard">
-								<ng-icon name="lucideHouse" />
+								<ng-icon name="lucideGauge" />
 								<span>Dashboard</span>
+							</a>
+						</li>
+						<li z-sidebar-menu-item>
+							<a z-sidebar-menu-button routerLink="/dashboard/component-library"
+								zTooltip="Component Library">
+								<ng-icon name="lucideInbox" />
+								<span>Component Library</span>
 							</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 
-			<!-- Gruppe: Development -->
+			<!-- Gruppe: Kunden -->
 			<div z-sidebar-group>
-				<div z-sidebar-group-label>Development</div>
+				<div z-sidebar-group-label>Kunden</div>
 
 				<div z-sidebar-group-content>
 					<ul z-sidebar-menu>
 
 						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard/settings" zTooltip="Development">
-								<ng-icon name="lucideInbox" />
-								<span>Einstellungen</span>
+							<a z-sidebar-menu-button routerLink="/dashboard/kunden" zTooltip="Kunden">
+								<ng-icon name="lucideUsers" />
+								<span>Kunden</span>
 							</a>
 						</li>
 
@@ -102,17 +109,22 @@
 	<!-- Hauptbereich -->
 	<main z-sidebar-inset class="flex min-h-dvh flex-col">
 
-		<header class="flex h-14 shrink-0 items-center gap-3 border-b px-4">
+		<header class="bg-white flex h-14 shrink-0 items-center gap-3 px-4 border-b">
 			<button z-sidebar-trigger aria-label="Toggle Sidebar"></button>
 
 			<div class="flex-1">
-				<h1 class="text-lg font-semibold">Dashboard</h1>
+				<form class="max-w-72">
+					<input type="text" placeholder="Search... STRG + K" class="w-full rounded border px-2 py-1" />
+				</form>
 			</div>
+			<app-dark-mode-toggle></app-dark-mode-toggle>
 		</header>
 
-		<section class="flex-1 p-4">
+		<section class="flex-1 p-6">
+			<app-breadcrumbs></app-breadcrumbs>
 			<router-outlet />
 		</section>
 
 	</main>
+
 </z-sidebar-provider>
