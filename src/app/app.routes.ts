@@ -48,6 +48,7 @@ export const routes: Routes = [
     ],
   },
   {
+    // Needs Lazyloading
     path: 'dashboard',
     component: DashboardLayout,
     canActivate: [authGuard],

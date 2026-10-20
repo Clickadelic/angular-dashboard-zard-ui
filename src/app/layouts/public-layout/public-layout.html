@@ -3,7 +3,9 @@
 		<div class="w-full bg-background h-8 flex items-center justify-center">
 			<div class="container mx-auto max-w-317 flex items-center justify-end px-4">
 				<ul class="flex items-center justify-end gap-5 text-primary-medium text-sm">
-					<li><a href="/" class="hover:underline">Switch</a></li>
+					<li><a href="/" class="hover:underline rounded-full border border-primary-dark w-12">
+							<span class="font-corinthia rounded-full border border-primary-dark">E</span></a>
+					</li>
 					<li>
 						<a href="/" class="hover:underline flex gap-0.5">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -54,18 +56,27 @@
 				</nav>
 			</div>
 		</div>
-		<div class="w-full h-144">
-			<div class="w-full h-144 bg-hero-image">
-				Text
+		<div class="w-full relative">
+			<div class="w-full relative z-10 h-144 bg-hero-image">
+				<div class="container mx-auto max-w-317 flex items-center justify-between px-4">
+					<div class="bg-primary-medium">
+						<h2 class="text-white">Willkommen beim Versicherer des Jahres</h2>
+					</div>
+				</div>
 			</div>
-			<div class="w-full bg-rose-300">
-				asd
-			</div>
+			<div class="relative -mt-52 z-20 w-full h-62 bg-hero-mask bg-cover bg-center"></div>
 		</div>
 	</header>
-	<main class="container mx-auto px-4 flex grow">
-		Content
-	</main>
+	<div class="bg-primary-dark w-full grow">
+		<div class="container mx-auto px-4 flex">
+			Content
+		</div>
+	</div>
+	<div class="bg-base-dark w-full">
+		<div class="container mx-auto h-124 px-4 flex">
+			Content
+		</div>
+	</div>
 	<footer class="w-full h-8 bg-primary-medium text-white">
 		<p>Footer</p>
 	</footer>
