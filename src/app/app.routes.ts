@@ -15,6 +15,7 @@ import { SettingsPage } from './pages/dashboard/settings-page/settings-page';
 import { CustomersPage } from './pages/dashboard/customers-page/customers-page';
 import { ContractsPage } from './pages/dashboard/contracts-page/contracts-page';
 import { ContactSubmissionsPage } from './pages/dashboard/contact-submissions-page/contact-submissions-page';
+
 export const routes: Routes = [
   {
     path: '',
