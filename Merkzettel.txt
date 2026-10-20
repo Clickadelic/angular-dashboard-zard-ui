@@ -1,0 +1,21 @@
+Signal Forms:
+
+In Angular 21, form validation is primarily handled through Signal Forms, which provide a declarative and reactive approach using the form() function and built-in validators like required(), minLength(), and validateHttp().
+
+Signal Forms Validation
+Signal forms manage validation state directly within the component class, allowing for context-based and cross-field validation without manual toggling.
+
+Built-in Rules: Use functions like required(path), minLength(path, 8), and email(path) to define schema constraints.
+Conditional Logic: The when property applies single rules based on other values, while applyWhen() handles multiple rules conditionally.
+Cross-Field & Async: Use validate() for custom logic (e.g., password matching) and validateHttp() for asynchronous checks like username availability.
+Reactive Forms (Legacy/Standard)
+For traditional reactive forms, validation logic remains in the TypeScript class using FormBuilder and Validators. 
+
+Implementation: Validators are passed as arrays to FormControl or FormGroup (e.g., Validators.required, Validators.pattern). 
+Custom Validators: Developers create ValidatorFn functions to handle complex or form-level validation requirements. 
+State Management: Use markAllAsTouched() to display errors immediately upon submission attempts. 
+
+
+Was sind Standalone Components?
+
+Wie wird die Form-Validierung gemacht?
