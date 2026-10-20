@@ -1,83 +1,9 @@
 <div class="min-h-dvh flex flex-col items-center justify-between bg-white bg-auth-image bg-cover bg-center">
-	<header class="w-full">
-		<div class="w-full bg-background h-8 flex items-center justify-center">
-			<div class="container mx-auto max-w-317 flex items-center justify-end px-4">
-				<ul class="flex items-center justify-end gap-5 text-primary-medium text-sm">
-					<li><a href="/" class="hover:underline rounded-full border border-primary-dark w-12">
-							<span class="font-corinthia rounded-full border border-primary-dark">E</span></a>
-					</li>
-					<li>
-						<a href="/" class="hover:underline flex gap-0.5">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-								class="bi bi-caret-right-fill mt-0.5 scale-75" viewBox="0 0 16 16">
-								<path
-									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-							</svg>
-							Beratung vor Ort
-						</a>
-					</li>
-					<li>
-						<a href="/" class="hover:underline flex gap-0.5">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-								class="bi bi-caret-right-fill mt-0.5 scale-75" viewBox="0 0 16 16">
-								<path
-									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-							</svg>
-							Firmenkunden
-						</a>
-					</li>
-					<li>
-						<a href="/" class="hover:underline flex gap-0.5">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-								class="bi bi-caret-right-fill mt-0.5 scale-75" viewBox="0 0 16 16">
-								<path
-									d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-							</svg>
-							Karriere
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="w-full bg-white h-16">
-			<div class="container mx-auto max-w-317 flex items-center justify-between px-4">
-				<h1 class="bg-primary flex flex-col items-center justify-center h-16 w-48">
-					<a href="/" class="text-primary-dark-foreground text-4xl hover:underline font-corinthia">Health
-						Insurance</a>
-				</h1>
-				<nav class="flex items-center justify-end">
-					<ul class="flex items-center justify-end gap-5 font-bebas-neue">
-						<li><a href="/" class="text-primary-medium hover:underline">Home</a></li>
-						<li><a href="/" class="text-primary-medium hover:underline">About</a></li>
-						<li><a href="/" class="text-primary-medium hover:underline">Services</a></li>
-						<li><a href="/" class="text-primary-medium hover:underline">Contact</a></li>
-						<li><a href="/" class="text-primary-medium hover:underline">Blog</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<div class="w-full relative">
-			<div class="w-full relative z-10 h-144 bg-hero-image">
-				<div class="container mx-auto max-w-317 flex items-center justify-between px-4">
-					<div class="bg-primary-medium">
-						<h2 class="text-white">Willkommen beim Versicherer des Jahres</h2>
-					</div>
-				</div>
-			</div>
-			<div class="relative -mt-52 z-20 w-full h-62 bg-hero-mask bg-cover bg-center"></div>
-		</div>
-	</header>
+	<app-header class="w-full"></app-header>
 	<div class="bg-primary-dark w-full grow">
-		<div class="container mx-auto px-4 flex">
-			Content
+		<div class="container mx-auto px-4">
+			<router-outlet />
 		</div>
 	</div>
-	<div class="bg-base-dark w-full">
-		<div class="container mx-auto h-124 px-4 flex">
-			Content
-		</div>
-	</div>
-	<footer class="w-full h-8 bg-primary-medium text-white">
-		<p>Footer</p>
-	</footer>
+	<app-footer class="w-full"></app-footer>
 </div>
