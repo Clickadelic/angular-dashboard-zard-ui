@@ -5,12 +5,16 @@ import {
   ZardHoverCardDirective,
 } from '@/shared/components/hover-card/hover-card.component';
 
-
-
+import { DashboardCardComponent } from '@/layouts/dashboard-layout/dashboard-card/dashboard-card';
 
 @Component({
   selector: 'app-component-library-page',
-  imports: [ZardButtonComponent, ZardHoverCardComponent, ZardHoverCardDirective],
+  imports: [
+    ZardButtonComponent,
+    ZardHoverCardComponent,
+    ZardHoverCardDirective,
+    DashboardCardComponent,
+  ],
   templateUrl: './component-library-page.html',
   styleUrl: './component-library-page.css',
 })

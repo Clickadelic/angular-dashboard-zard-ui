@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
-import { ForgotPasswordPage } from './pages/auth/forgot-password-page/forgot-password-page';
-
-import { authGuard } from './guards/auth.guard';
-
-import { LoginPage } from './pages/auth/login-page/login-page';
+import { PublicLayout } from './layouts/public-layout/public-layout';
 import { AuthLayout } from './layouts/auth-layout/auth-layout';
 import { DashboardLayout } from './layouts/dashboard-layout/dashboard-layout';
 
+import { ForgotPasswordPage } from './pages/auth/forgot-password-page/forgot-password-page';
+import { LoginPage } from './pages/auth/login-page/login-page';
 import { RegisterPage } from './pages/auth/register-page/register-page';
+
+import { authGuard } from './guards/auth.guard';
+
 import { DashboardPage } from './pages/dashboard/dashboard-page/dashboard-page';
 import { ComponentLibraryPage } from './pages/dashboard/component-library-page/component-library-page';
 import { IndexPage } from './pages/index-page/index-page';
@@ -19,7 +20,13 @@ import { ContactSubmissionsPage } from './pages/dashboard/contact-submissions-pa
 export const routes: Routes = [
   {
     path: '',
-    component: IndexPage,
+    component: PublicLayout,
+    children: [
+      {
+        path: '',
+        component: IndexPage,
+      },
+    ],
   },
   // Auth Routes
   {
@@ -43,37 +50,37 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardLayout,
-	canActivate: [authGuard],
+    canActivate: [authGuard],
     children: [
       {
         path: '',
         component: DashboardPage,
-		canActivate: [authGuard]
+        canActivate: [authGuard],
       },
       {
         path: 'component-library',
         component: ComponentLibraryPage,
-		canActivate: [authGuard]
+        canActivate: [authGuard],
       },
       {
         path: 'kunden',
         component: CustomersPage,
-		canActivate: [authGuard]
+        canActivate: [authGuard],
       },
       {
         path: 'vertraege',
         component: ContractsPage,
-		canActivate: [authGuard]
+        canActivate: [authGuard],
       },
       {
-        path: 'kontaktanfragen',
+        path: 'kontaktformular',
         component: ContactSubmissionsPage,
-		canActivate: [authGuard]
+        canActivate: [authGuard],
       },
       {
         path: 'einstellungen',
         component: SettingsPage,
-		canActivate: [authGuard]
+        canActivate: [authGuard],
       },
     ],
   },

@@ -1,19 +1,21 @@
 <z-card class="w-full">
 	<z-card-header>
-		<z-card-title>Dings</z-card-title>
-		<z-card-description>Bums</z-card-description>
+		<z-card-title [zTitle]="title()" />
+
+		@if (description()) {
+		<z-card-description [zDescription]="description()" />
+		}
 	</z-card-header>
 
 	<z-card-content>
-		<p class="text-3xl font-bold">12</p>
-		<p class="text-sm text-muted-foreground">
-			3 Projekte in Bearbeitung
-		</p>
+		<ng-content />
 	</z-card-content>
 
+	@if (footer()) {
 	<z-card-footer>
 		<span class="text-sm text-muted-foreground">
-			Stand: heute
+			{{ footer() }}
 		</span>
 	</z-card-footer>
+	}
 </z-card>

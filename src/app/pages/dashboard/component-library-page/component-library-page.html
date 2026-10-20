@@ -23,3 +23,18 @@
 		</ng-template>
 	</div>
 </div>
+<div class="flex flex-col gap-3 mb-8 max-w-md">
+	<h2 class="text-2xl font-bebas-neue">Dashboard Card</h2>
+	<app-dashboard-card title="Vertragsänderungen">
+		<div class="flex items-center justify-between mb-3">
+			<h4 class="card-foreground dark:card-foreground font-bold text-xl">1.000</h4>
+			<div
+				class="flex items-center justify-between gap-2 px-2 py-1 bg-amber-300/20 rounded border border-amber-300">
+				<svg lucideMoveRight class="size-4 text-amber-600"></svg>
+				<span class="text-amber-600">+- 0%</span>
+			</div>
+		</div>
+		<p class="text-muted-foreground text-sm">Some text <span class="text-amber-600">100</span>
+			Verträge geändert.</p>
+	</app-dashboard-card>
+</div>

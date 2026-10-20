@@ -1,0 +1,107 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-5" novalidate>
+	<!-- Name -->
+	<div class="space-y-2">
+		<label for="name">Name</label>
+
+		<input id="name" type="text" formControlName="name" autocomplete="name"
+			class="w-full rounded-md border px-3 py-2" />
+
+		@if (form.controls.name.touched && form.controls.name.invalid) {
+		<p class="text-sm text-destructive">
+			@if (form.controls.name.hasError('required')) {
+			Bitte gib deinen Namen ein.
+			} @else {
+			Der Name muss mindestens 2 Zeichen enthalten.
+			}
+		</p>
+		}
+	</div>
+	<!-- Phone -->
+	<div class="space-y-2">
+		<label for="phone">Telefonnummer</label>
+
+		<input id="phone" type="text" formControlName="phone" autocomplete="tel"
+			class="w-full rounded-md border px-3 py-2" />
+
+		@if (form.controls.phone.touched && form.controls.phone.invalid) {
+		<p class="text-sm text-destructive">
+			@if (form.controls.phone.hasError('required')) {
+			Bitte gib deine Telefonnummer ein.
+			} @else {
+			Die Telefonnummer muss mindestens 2 Zeichen enthalten.
+			}
+		</p>
+		}
+	</div>
+
+	<!-- E-Mail -->
+	<div class="space-y-2">
+		<label for="email">E-Mail-Adresse</label>
+
+		<input id="email" type="email" formControlName="email" autocomplete="email"
+			class="w-full rounded-md border px-3 py-2" />
+
+		@if (form.controls.email.touched && form.controls.email.invalid) {
+		<p class="text-sm text-destructive">
+			@if (form.controls.email.hasError('required')) {
+			Bitte gib deine E-Mail-Adresse ein.
+			} @else {
+			Bitte gib eine gültige E-Mail-Adresse ein.
+			}
+		</p>
+		}
+	</div>
+
+	<!-- Betreff -->
+	<div class="space-y-2">
+		<label for="subject">Betreff</label>
+
+		<input id="subject" type="text" formControlName="subject" class="w-full rounded-md border px-3 py-2" />
+
+		@if (form.controls.subject.touched && form.controls.subject.invalid) {
+		<p class="text-sm text-destructive">
+			@if (form.controls.subject.hasError('required')) {
+			Bitte gib einen Betreff ein.
+			} @else {
+			Der Betreff muss mindestens 3 Zeichen enthalten.
+			}
+		</p>
+		}
+	</div>
+
+	<!-- Nachricht -->
+	<div class="space-y-2">
+		<label for="message">Nachricht</label>
+
+		<textarea id="message" formControlName="message" rows="5" class="w-full rounded-md border px-3 py-2"></textarea>
+
+		@if (form.controls.message.touched && form.controls.message.invalid) {
+		<p class="text-sm text-destructive">
+			@if (form.controls.message.hasError('required')) {
+			Bitte gib eine Nachricht ein.
+			} @else {
+			Deine Nachricht muss mindestens 10 Zeichen enthalten.
+			}
+		</p>
+		}
+	</div>
+
+	<!-- Statusmeldungen -->
+	@if (successMessage) {
+	<p role="status" class="text-sm text-green-600">
+		{{ successMessage }}
+	</p>
+	}
+
+	@if (errorMessage) {
+	<p role="alert" class="text-sm text-destructive">
+		{{ errorMessage }}
+	</p>
+	}
+
+	<!-- Absenden -->
+	<button type="submit" [disabled]="submitting"
+		class="w-full rounded-md bg-primary px-4 py-2 text-primary-foreground disabled:opacity-50">
+		{{ submitting ? 'Wird gesendet …' : 'Nachricht senden' }}
+	</button>
+</form>
