@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { PublicLayout } from './layouts/public-layout/public-layout';
 import { AuthLayout } from './layouts/auth-layout/auth-layout';
 import { DashboardLayout } from './layouts/dashboard-layout/dashboard-layout';
+import { ContactFormPage } from './pages/dashboard/contact-form-page/contact-form-page';
 
 import { ForgotPasswordPage } from './pages/auth/forgot-password-page/forgot-password-page';
 import { LoginPage } from './pages/auth/login-page/login-page';
@@ -15,7 +16,6 @@ import { IndexPage } from './pages/index-page/index-page';
 import { SettingsPage } from './pages/dashboard/settings-page/settings-page';
 import { CustomersPage } from './pages/dashboard/customers-page/customers-page';
 import { ContractsPage } from './pages/dashboard/contracts-page/contracts-page';
-import { ContactSubmissionsPage } from './pages/dashboard/contact-submissions-page/contact-submissions-page';
 
 export const routes: Routes = [
   {
@@ -74,7 +74,7 @@ export const routes: Routes = [
       },
       {
         path: 'kontaktformular',
-        component: ContactSubmissionsPage,
+        component: ContactFormPage,
         canActivate: [authGuard],
       },
       {
