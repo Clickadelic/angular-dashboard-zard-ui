@@ -1,60 +1,58 @@
-<div class="asd">
-	<div class="flex items-center justify-start mb-5">
-		<input #todoInput type="text"
-			class="card-foreground dark:card-foreground border-y border-l placeholder:text-gray-400 px-3 py-2 rounded-tl rounded-bl w-full"
-			placeholder="Neues Todo">
-		<button (click)="addTodo(todoInput.value); todoInput.value=''"
-			class="rounded-tr rounded-br p-2 bg-primary text-white border border-border hover:bg-primary/90 hover:cursor-pointer"><svg
-				lucidePlus></svg></button>
-	</div>
-	<ul class="flex flex-col items-start justify-start gap-0.5">
-		@for (todo of todos(); track todo.id) {
-		<li class="flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded w-full">
-			@if (editingTodoId() === todo.id) {
-			<!-- EDITIER-MODUS -->
-			<div class="flex items-center gap-2 w-full mr-2">
-				<input #editInput type="text" [value]="todo.title" (keyup.enter)="saveEdit(todo.id, editInput.value)"
-					(keyup.escape)="cancelEdit()"
-					class="border rounded px-2 py-1 text-sm w-full bg-white focus:outline-none focus:ring-1 focus:ring-primary">
-
-				<button (click)="saveEdit(todo.id, editInput.value)"
-					class="p-1 text-emerald-600 hover:text-emerald-800 hover:cursor-pointer" title="Speichern">
-					<svg lucideCheck class="size-4"></svg>
-				</button>
-
-				<button (click)="cancelEdit()" class="p-1 text-gray-500 hover:text-gray-700 hover:cursor-pointer"
-					title="Abbrechen">
-					<svg lucideX class="size-4"></svg>
-				</button>
-			</div>
-			} @else {
-			<!-- NORMALER ANZEIGE-MODUS -->
-			<div class="flex items-center justify-start">
-				<input type="checkbox" (click)="toggleIsDone(todo.id)" [checked]="todo.isDone"
-					class="mx-3 -mt-0.5 scale-125">
-				<span [class.cursor-default]="todo.isDone" [class.line-through]="todo.isDone">
-					{{ todo.title }}
-				</span>
-			</div>
-
-			<div class="flex items-center gap-1">
-				<!-- Bearbeiten Button -->
-				<button (click)="startEdit(todo.id)" class="p-2 text-primary hover:cursor-pointer hover:text-gray-700"
-					title="Bearbeiten">
-					<svg lucidePencil class="size-4"></svg>
-				</button>
-
-				<!-- Löschen Button -->
-				<button (click)="removeTodo($index)"
-					class="p-2 text-destructive hover:cursor-pointer hover:text-destructive/80" title="Löschen">
-					<svg lucideTrash class="size-4"></svg>
-				</button>
-			</div>
-			}
-		</li>
-		} @empty {
-		<li class="text-center mx-auto text-gray-400 text-sm mt-4">Keine Todos vorhanden</li>
-		}
-
-	</ul>
+<div class="flex items-center justify-start mb-5">
+	<input #todoInput type="text"
+		class="card-foreground dark:card-foreground border-y border-l placeholder:text-gray-400 px-3 py-2 rounded-tl rounded-bl w-full"
+		placeholder="Neues Todo">
+	<button (click)="addTodo(todoInput.value); todoInput.value=''"
+		class="rounded-tr rounded-br p-2 bg-primary text-white hover:bg-primary/90 hover:cursor-pointer"><svg
+			lucidePlus></svg></button>
 </div>
+<ul class="flex flex-col items-start justify-start gap-0.5">
+	@for (todo of todos(); track todo.id) {
+	<li class="flex justify-between items-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded w-full">
+		@if (editingTodoId() === todo.id) {
+		<!-- EDITIER-MODUS -->
+		<div class="flex items-center gap-2 w-full mr-2">
+			<input #editInput type="text" [value]="todo.title" (keyup.enter)="saveEdit(todo.id, editInput.value)"
+				(keyup.escape)="cancelEdit()"
+				class="border rounded px-2 py-1 text-sm w-full bg-white focus:outline-none focus:ring-1 focus:ring-primary">
+
+			<button (click)="saveEdit(todo.id, editInput.value)"
+				class="p-1 text-emerald-600 hover:text-emerald-800 hover:cursor-pointer" title="Speichern">
+				<svg lucideCheck class="size-4"></svg>
+			</button>
+
+			<button (click)="cancelEdit()" class="p-1 text-gray-500 hover:text-gray-700 hover:cursor-pointer"
+				title="Abbrechen">
+				<svg lucideX class="size-4"></svg>
+			</button>
+		</div>
+		} @else {
+		<!-- NORMALER ANZEIGE-MODUS -->
+		<div class="flex items-center justify-start">
+			<input type="checkbox" (click)="toggleIsDone(todo.id)" [checked]="todo.isDone"
+				class="mx-3 -mt-0.5 scale-125">
+			<span [class.cursor-default]="todo.isDone" [class.line-through]="todo.isDone">
+				{{ todo.title }}
+			</span>
+		</div>
+
+		<div class="flex items-center gap-1">
+			<!-- Bearbeiten Button -->
+			<button (click)="startEdit(todo.id)" class="p-2 text-primary hover:cursor-pointer hover:text-gray-700"
+				title="Bearbeiten">
+				<svg lucidePencil class="size-4"></svg>
+			</button>
+
+			<!-- Löschen Button -->
+			<button (click)="removeTodo($index)"
+				class="p-2 text-destructive hover:cursor-pointer hover:text-destructive/80" title="Löschen">
+				<svg lucideTrash class="size-4"></svg>
+			</button>
+		</div>
+		}
+	</li>
+	} @empty {
+	<li class="text-center mx-auto text-gray-400 text-sm mt-4">Keine Todos vorhanden</li>
+	}
+
+</ul>
