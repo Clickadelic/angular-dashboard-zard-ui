@@ -1,3 +1,15 @@
+nav ul li:after {
+	position: relative;
+	top: 2px;
+	content: '';
+	border: 1px solid var(--color-primary);
+	display: inline-block;
+	width: 1px;
+	height: 40px;
+	margin: 0 3px 0 5px;
+
+}
+
 .bg-hero-image {
   position: relative;
   background-image: url('../../../assets/images/gabin-vallet-J154nEkpzlQ-unsplash.jpg');
