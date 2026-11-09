@@ -1,0 +1,24 @@
+<z-card class="w-full">
+	<z-card-header>
+		<div class="flex items-center gap-4">
+			@if (user().avatar; as avatar) {
+			<img [ngSrc]="avatar" [alt]="user().name" width="64" height="64"
+				class="size-16 rounded-full object-cover" />
+			} @else {
+			<span aria-hidden="true"
+				class="flex size-16 items-center justify-center rounded-full bg-muted text-xl font-semibold">
+				{{ user().name.charAt(0) }}
+			</span>
+			}
+			<div class="flex flex-col gap-1">
+				<z-card-title [zTitle]="user().name" />
+				<z-card-description [zDescription]="user().role" />
+			</div>
+		</div>
+	</z-card-header>
+
+	<z-card-content>
+		<p class="mb-1">{{ user().email }}</p>
+		<p class="text-sm text-muted-foreground">Alter: {{ user().age }} · Geschlecht: {{ user().gender }}</p>
+	</z-card-content>
+</z-card>
