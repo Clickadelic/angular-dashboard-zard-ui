@@ -1,0 +1,40 @@
+<div class="relative min-h-screen w-full overflow-hidden" [ngClass]="classNames()">
+	<!-- Blurred low-res preview layer -->
+	<div aria-hidden="true" class="absolute inset-0 bg-cover bg-center bg-no-repeat" [style.background-image]="image().previewUrl
+			? 'url(&quot;' + image().previewUrl + '&quot;)'
+			: null" [style.filter]="'blur(16px) brightness(0.9)'" [style.transform]="'scale(1.06)'"
+		[style.transition]="'opacity 200ms ease-out'" [style.opacity]="image().previewUrl ? 1 : 0"></div>
+
+	<!-- High-resolution background -->
+	<div aria-hidden="true"
+		class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out"
+		[style.background-image]="image().url
+			? 'url(&quot;' + image().url + '&quot;)'
+			: null" [style.opacity]="image().url ? 1 : 0"></div>
+
+	<!-- Projected content -->
+	<div class="relative z-10">
+		<ng-content />
+	</div>
+
+	<!-- Unsplash credits -->
+	@if (image().credit; as credit) {
+	<div class="absolute bottom-4 z-20" [ngClass]="creditPositionClass()">
+		<p class="rounded bg-black/45 px-2 py-1 text-xs text-white shadow-sm backdrop-blur-sm">
+			Photo by
+
+			<a [href]="credit.authorUrl" target="_blank" rel="noopener noreferrer"
+				class="underline hover:text-blue-200">
+				{{ credit.author }}
+			</a>
+
+			on
+
+			<a [href]="credit.unsplashUrl" target="_blank" rel="noopener noreferrer"
+				class="underline hover:text-blue-200">
+				Unsplash
+			</a>
+		</p>
+	</div>
+	}
+</div>

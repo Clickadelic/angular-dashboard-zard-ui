@@ -10,7 +10,7 @@ import users from '@/data/users.json';
 
 @Component({
   selector: 'app-customers-page',
-  imports: [ZardCardImports, ZardCardComponent, UserCard],
+  imports: [ZardCardImports, UserCard],
   templateUrl: './customers-page.html',
   styleUrl: './customers-page.css',
 })

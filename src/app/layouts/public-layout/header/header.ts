@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { LucideMoveRight, LucideSearch, LucideLogIn } from '@lucide/angular';
+
 
 @Component({
   selector: 'app-header',
-  imports: [LucideMoveRight, LucideSearch, LucideLogIn],
+  imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })

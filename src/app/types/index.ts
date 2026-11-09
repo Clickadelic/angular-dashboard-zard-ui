@@ -7,3 +7,5 @@ export type User = {
   role: string;
   avatar: string | null;
 };
+
+export type CreditsPosition = 'left' | 'center' | 'right';
