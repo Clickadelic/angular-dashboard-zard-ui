@@ -1,0 +1,191 @@
+[
+	{
+		"id": "2825a20c-2d20-4d3c-b321-5f61a3dd36ec",
+		"name": "Barbara Johners",
+		"age": 42,
+		"gender": "female",
+		"email": "b.johners@demos.com",
+		"role": "CFO",
+		"avatar": "assets/images/avatars/Barbara-Johners.jpg"
+	},
+	{
+		"id": "cfbc0827-abde-4e56-a264-f7b62b03c866",
+		"name": "Claudia Gustavsson",
+		"age": 37,
+		"gender": "female",
+		"email": "c.gustavsson@demos.com",
+		"role": "Managerin",
+		"avatar": "assets/images/avatars/Claudia-Gustavsson.jpg"
+	},
+	{
+		"id": "34441d7c-78fe-4062-bb95-390134224cdf",
+		"name": "Gerrit Rieckers",
+		"age": 41,
+		"gender": "male",
+		"email": "rieckers@wirtual-team.com",
+		"role": "CEO",
+		"avatar": "assets/images/avatars/Gerrit-Rieckers.jpg"
+	},
+	{
+		"id": "34441d7c-78fe-4062-bb95-390134224cde",
+		"name": "Hendrik Blursson",
+		"age": 28,
+		"gender": "male",
+		"email": "hendrik.blursson@example.com",
+		"role": "Editor",
+		"avatar": "assets/images/avatars/Hendrik-Blursson.jpg"
+	},
+	{
+		"id": "9f1cc88e-5ff9-4b8a-b2bf-e70e0c6a47c6",
+		"name": "Holee Shu",
+		"age": 28,
+		"gender": "female",
+		"email": "holee.shu@example.com",
+		"role": "Model",
+		"avatar": "assets/images/avatars/Holee-Shu.jpg"
+	},
+	{
+		"id": "53341d7c-45fe-4062-bb95-390134224cdf",
+		"name": "Jack Schmidt",
+		"age": 32,
+		"gender": "male",
+		"email": "jack.schmidt@example.com",
+		"role": "Manager",
+		"avatar": "assets/images/avatars/Jack-Schmidt.jpg"
+	},
+	{
+		"id": "880783f9-2274-4af1-a56e-c1b3812613dc",
+		"name": "Jennifer Burglau",
+		"age": 31,
+		"gender": "female",
+		"email": "jennifer.burglau@example.com",
+		"role": "Bloggerin",
+		"avatar": "assets/images/avatars/Jennifer-Burglau.jpg"
+	},
+	{
+		"id": "66741d7c-78gt-4062-ef95-390324224cdf",
+		"name": "Johan Dohan",
+		"age": 28,
+		"gender": "male",
+		"email": "johan.dohan@example.com",
+		"role": "Developer",
+		"avatar": "assets/images/avatars/Johan-Dohan.jpg"
+	},
+	{
+		"id": "77841d7c-78gt-4062-ef95-390324224cdf",
+		"name": "Liam Landwehr",
+		"age": 30,
+		"gender": "male",
+		"email": "liam.landwehr@example.com",
+		"role": "Designer",
+		"avatar": "assets/images/avatars/Liam-Landwehr.jpg"
+	},
+	{
+		"id": "0f5d61f0-703e-4973-84d4-cab5f465fe4f",
+		"name": "Luis Remon",
+		"age": 32,
+		"gender": "male",
+		"email": "luis.remon@example.com",
+		"role": "Designer",
+		"avatar": "assets/images/avatars/Luis-Remon.jpg"
+	},
+	{
+		"id": "c9fcea20-aaa8-48f1-b183-c0543979edfd",
+		"name": "Matthias Klempner",
+		"age": 34,
+		"gender": "male",
+		"email": "matthias.klempner@example.com",
+		"role": "Developer",
+		"avatar": "assets/images/avatars/Matthias-Klempner.jpg"
+	},
+	{
+		"id": "63e1fa76-56b3-4f9f-a91b-84e39050713a",
+		"name": "Marina Dogbarth",
+		"age": 34,
+		"gender": "female",
+		"email": "marina.dogbarth@example.com",
+		"role": "Sales",
+		"avatar": "assets/images/avatars/Marina-Dogbarth.jpg"
+	},
+	{
+		"id": "482e79ef-d9b2-458e-9b44-9b2abd20d622",
+		"name": "Maritta Meyers",
+		"age": 56,
+		"gender": "female",
+		"email": "maritta.meyers@example.com",
+		"role": "Hausfrau",
+		"avatar": "assets/images/avatars/Maritta-Meyers.jpg"
+	},
+	{
+		"id": "0ca6c812-ba17-4f28-a1ea-6ac2655f10b1",
+		"name": "Maximilian Lux",
+		"age": 35,
+		"gender": "male",
+		"email": "maximilian.lux@example.com",
+		"role": "Photographer",
+		"avatar": "assets/images/avatars/Maximilian-Lux.jpg"
+	},
+	{
+		"id": "ba490f06-3a16-42e5-b450-023c8c160c04",
+		"name": "Poca Talahina",
+		"age": 31,
+		"gender": "female",
+		"email": "poca.talahina@beautiful-girls.com",
+		"role": "Model",
+		"avatar": "assets/images/avatars/Poca-Talahina.jpg"
+	},
+	{
+		"id": "504c5598-6ae4-4a0d-a2c4-9f3d367a169e",
+		"name": "Richard Braun",
+		"age": 52,
+		"gender": "male",
+		"email": "richard.braun@example.com",
+		"role": "Engineer",
+		"avatar": "assets/images/avatars/Richard-Braun.jpg"
+	},
+	{
+		"id": "25fb96bb-e8ea-409e-8d75-bff479a909e2",
+		"name": "Robin Hut",
+		"age": 36,
+		"gender": "male",
+		"email": "robin.hut@retter.de",
+		"role": "Savior",
+		"avatar": "assets/images/avatars/Robin-Hut.jpg"
+	},
+	{
+		"id": "42277714-7b6a-492c-8c8e-fabaed960c8b",
+		"name": "Sinah Dong",
+		"age": 45,
+		"gender": "female",
+		"email": "sinah@moviestars.com",
+		"role": "Actor",
+		"avatar": "assets/images/avatars/Sinah-Dong.jpg"
+	},
+	{
+		"id": "80618ed4-069d-4fb4-b024-eb81c5716bd2",
+		"name": "Stefan Borat",
+		"age": 45,
+		"gender": "male",
+		"email": "stefan.borat@example.com",
+		"role": "Filmmaker",
+		"avatar": "assets/images/avatars/Stefan-Borat.jpg"
+	},
+	{
+		"id": "53377714-7b6a-492c-8c8e-fabaed960c8b",
+		"name": "Tim Platzhalt",
+		"age": 25,
+		"gender": "male",
+		"email": "tim.platzhalt@example.com",
+		"role": "Intern",
+		"avatar": "assets/images/avatars/Tim-Platzhalt.jpg"
+	},
+	{
+		"id": "5f31a110-e707-4b0d-a797-71dc3b3ebcd1",
+		"name": "Timo Dingens",
+		"age": 22,
+		"gender": "male",
+		"email": "timo.dingens@example.com",
+		"role": "Intern",
+		"avatar": "assets/images/avatars/Timo-Dingens.jpg"
+	}
+]

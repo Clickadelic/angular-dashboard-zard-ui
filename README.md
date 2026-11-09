@@ -12,6 +12,19 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Demo user cards
+
+The dashboard imports the array in `src/app/data/users.json` and uses
+`@for (user of users; track user.id)` to render one `app-user-card` per user.
+Each card receives the current object through `[user]="user"`; inside the card,
+`user()` reads the input signal, so `user().name` accesses its name.
+IDs must be unique because Angular uses them to track cards.
+
+Avatar paths are relative to the application base URL, such as
+`assets/images/avatars/Gerrit-Rieckers.jpg`. Add photos under
+`src/app/assets/images/avatars` and use `null` for users without a photo;
+the card displays the user's initial instead.
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:

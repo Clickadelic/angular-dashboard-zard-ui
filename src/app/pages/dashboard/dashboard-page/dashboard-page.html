@@ -14,9 +14,9 @@
 		<div class="flex items-center justify-between mb-3">
 			<h4 class="card-foreground dark:card-foreground font-bold text-xl">54.232</h4>
 			<div
-				class="flex items-center justify-between gap-2 px-2 py-1 bg-emerald-300/20 rounded border border-emerald-300">
-				<svg lucideTrendingUp class="size-4 text-emerald-800"></svg>
-				<span class="text-emerald-800">+ 5%</span>
+				class="flex items-center justify-between gap-2 px-2 py-1 bg-emerald-300/20 dark:bg-emerald-300/20 rounded border border-emerald-300">
+				<svg lucideTrendingUp class="size-4 text-emerald-800 dark:text-emerald-300"></svg>
+				<span class="text-emerald-800 dark:text-emerald-300">+ 5%</span>
 			</div>
 		</div>
 		<p class="text-muted-foreground text-sm">Diesen Monat wurden <span class="text-emerald-800">3.525</span>
@@ -27,8 +27,8 @@
 			<h4 class="card-foreground dark:card-foreground font-bold text-xl">2.432</h4>
 			<div
 				class="flex items-center justify-between gap-2 px-2 py-1 bg-destructive/20 rounded border border-rose-300">
-				<svg lucideTrendingDown class="size-4 text-rose-800"></svg>
-				<span class="text-rose-800">- 5%</span>
+				<svg lucideTrendingDown class="size-4 text-rose-800 dark:text-rose-300"></svg>
+				<span class="text-rose-800 dark:text-rose-300">- 5%</span>
 			</div>
 		</div>
 		<p class="text-muted-foreground text-sm">Es wurden <span class="text-destructive">345</span>
@@ -39,15 +39,15 @@
 			<h4 class="card-foreground dark:card-foreground font-bold text-xl">1.862</h4>
 			<div
 				class="flex items-center justify-between gap-2 px-2 py-1 bg-amber-300/20 rounded border border-amber-300">
-				<svg lucideMoveRight class="size-4 text-amber-600"></svg>
-				<span class="text-amber-600">+ 1%</span>
+				<svg lucideMoveRight class="size-4 text-amber-600 dark:text-amber-300"></svg>
+				<span class="text-amber-600 dark:text-amber-300">+ 1%</span>
 			</div>
 		</div>
 		<p class="text-muted-foreground text-sm">Diesen Monat wurden <span class="text-amber-600">932</span>
 			Verträge geändert.</p>
 	</app-dashboard-card>
 </div>
-<div class="grid grid-cols-10 gap-8">
+<div class="grid grid-cols-10 gap-8 mb-8">
 	<div class="col-span-3">
 		<app-dashboard-card title="Statistiken">
 			<app-bar-chart></app-bar-chart>
@@ -59,7 +59,7 @@
 		</app-dashboard-card>
 	</div>
 	<div class="col-span-4">
-		<app-dashboard-card class="flex h-full">
+		<app-dashboard-card title="Todo-List" class="flex h-full">
 			<app-todo-list></app-todo-list>
 		</app-dashboard-card>
 	</div>
