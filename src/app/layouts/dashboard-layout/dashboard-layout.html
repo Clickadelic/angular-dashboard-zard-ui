@@ -1,138 +1,142 @@
-<z-sidebar-provider zDefaultOpen="true" class="min-h-dvh">
-	<z-sidebar zCollapsible="icon">
+<app-background-image [creditsPosition]="'right'">
+	<z-sidebar-provider zDefaultOpen="true" class="min-h-dvh bg-transparent">
+		<z-sidebar zCollapsible="icon">
 
-		<!-- Header / Logo -->
-		<z-sidebar-header>
-			<a routerLink="/dashboard" class="flex items-center gap-2 px-2 py-2" title="Dashboard">
-				<ng-icon name="lucideHeartPulse" class="text-primary size-10 shrink-0 -mt-1" />
+			<!-- Header / Logo -->
+			<z-sidebar-header>
+				<a routerLink="/dashboard" class="flex items-center gap-2 px-2 py-2" title="Dashboard">
+					<ng-icon name="lucideHeartPulse" class="text-primary size-10 shrink-0 -mt-1" />
 
-				<span class="truncate font-semibold font-bebas-neue text-xl text-primary leading-snug">
-					Health Insurance
-				</span>
-			</a>
-		</z-sidebar-header>
+					<span class="truncate font-semibold font-bebas-neue text-xl text-primary leading-snug">
+						Health Insurance
+					</span>
+				</a>
+			</z-sidebar-header>
 
-		<!-- Navigation -->
-		<z-sidebar-content>
+			<!-- Navigation -->
+			<z-sidebar-content>
 
-			<!-- Gruppe: Workspace -->
-			<div z-sidebar-group>
-				<div z-sidebar-group-label>Workspace</div>
+				<!-- Gruppe: Workspace -->
+				<div z-sidebar-group>
+					<div z-sidebar-group-label>Workspace</div>
 
-				<div z-sidebar-group-content>
-					<ul z-sidebar-menu>
+					<div z-sidebar-group-content>
+						<ul z-sidebar-menu>
 
-						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard" zTooltip="Dashboard">
-								<ng-icon name="lucideGauge" />
-								<span>Dashboard</span>
-							</a>
-						</li>
-						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard/component-library"
-								zTooltip="Component Library">
-								<ng-icon name="lucideInbox" />
-								<span>Component Library</span>
-							</a>
-						</li>
-					</ul>
+							<li z-sidebar-menu-item>
+								<a z-sidebar-menu-button routerLink="/dashboard" zTooltip="Dashboard">
+									<ng-icon name="lucideGauge" />
+									<span>Dashboard</span>
+								</a>
+							</li>
+							<li z-sidebar-menu-item>
+								<a z-sidebar-menu-button routerLink="/dashboard/component-library"
+									zTooltip="Component Library">
+									<ng-icon name="lucideInbox" />
+									<span>Component Library</span>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
 
-			<!-- Gruppe: Kunden -->
-			<div z-sidebar-group>
-				<div z-sidebar-group-label>Kunden</div>
+				<!-- Gruppe: Kunden -->
+				<div z-sidebar-group>
+					<div z-sidebar-group-label>Kunden</div>
 
-				<div z-sidebar-group-content>
-					<ul z-sidebar-menu>
+					<div z-sidebar-group-content>
+						<ul z-sidebar-menu>
 
-						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard/kunden" zTooltip="Kunden">
-								<ng-icon name="lucideUsers" />
-								<span>Kunden</span>
-							</a>
-						</li>
-						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard/vertraege" zTooltip="Verträge">
-								<ng-icon name="lucideFileText" />
-								<span>Verträge</span>
-							</a>
-						</li>
-						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard/kontaktformular" zTooltip="Kontaktformular">
-								<ng-icon name="lucideSend" />
-								<span>Kontaktformular</span>
-							</a>
-						</li>
+							<li z-sidebar-menu-item>
+								<a z-sidebar-menu-button routerLink="/dashboard/kunden" zTooltip="Kunden">
+									<ng-icon name="lucideUsers" />
+									<span>Kunden</span>
+								</a>
+							</li>
+							<li z-sidebar-menu-item>
+								<a z-sidebar-menu-button routerLink="/dashboard/vertraege" zTooltip="Verträge">
+									<ng-icon name="lucideFileText" />
+									<span>Verträge</span>
+								</a>
+							</li>
+							<li z-sidebar-menu-item>
+								<a z-sidebar-menu-button routerLink="/dashboard/kontaktformular"
+									zTooltip="Kontaktformular">
+									<ng-icon name="lucideSend" />
+									<span>Kontaktformular</span>
+								</a>
+							</li>
 
-					</ul>
+						</ul>
+					</div>
 				</div>
-			</div>
 
-			<!-- Gruppe: Administration -->
-			<div z-sidebar-group>
-				<div z-sidebar-group-label>Administration</div>
+				<!-- Gruppe: Administration -->
+				<div z-sidebar-group>
+					<div z-sidebar-group-label>Administration</div>
 
-				<div z-sidebar-group-content>
-					<ul z-sidebar-menu>
+					<div z-sidebar-group-content>
+						<ul z-sidebar-menu>
 
-						<li z-sidebar-menu-item>
-							<a z-sidebar-menu-button routerLink="/dashboard/einstellungen" zTooltip="Administration">
-								<ng-icon name="lucideSettings" />
-								<span>Einstellungen</span>
-							</a>
-						</li>
-					</ul>
+							<li z-sidebar-menu-item>
+								<a z-sidebar-menu-button routerLink="/dashboard/einstellungen"
+									zTooltip="Administration">
+									<ng-icon name="lucideSettings" />
+									<span>Einstellungen</span>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
 
-		</z-sidebar-content>
+			</z-sidebar-content>
 
-		<!-- Footer / Benutzermenü -->
-		<z-sidebar-footer>
-			<div z-sidebar-menu>
-				<div z-sidebar-menu-item>
+			<!-- Footer / Benutzermenü -->
+			<z-sidebar-footer>
+				<div z-sidebar-menu>
+					<div z-sidebar-menu-item>
 
-					<button z-sidebar-menu-button zTooltip="Benutzername" class="h-auto py-2">
-						<div
-							class="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-							TH
-						</div>
+						<button z-sidebar-menu-button zTooltip="Benutzername" class="h-auto py-2">
+							<div
+								class="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+								TH
+							</div>
 
-						<div class="flex min-w-0 flex-1 flex-col items-start">
-							<span class="truncate text-sm font-medium">
-								Tobias
-							</span>
+							<div class="flex min-w-0 flex-1 flex-col items-start">
+								<span class="truncate text-sm font-medium">
+									Tobias
+								</span>
 
-							<span class="truncate text-xs text-muted-foreground">
-								tobiasATexample.com
-							</span>
-						</div>
+								<span class="truncate text-xs text-muted-foreground">
+									tobiasATexample.com
+								</span>
+							</div>
 
-						<ng-icon name="lucideChevronsUpDown" />
-					</button>
+							<ng-icon name="lucideChevronsUpDown" />
+						</button>
 
+					</div>
 				</div>
-			</div>
-		</z-sidebar-footer>
+			</z-sidebar-footer>
 
-	</z-sidebar>
+		</z-sidebar>
 
-	<!-- Hauptbereich -->
-	<main z-sidebar-inset class="flex min-h-dvh flex-col">
-		<header class="bg-white dark:bg-sidebar flex h-14 shrink-0 items-center gap-3 px-4 border-b">
-			<button z-sidebar-trigger aria-label="Toggle Sidebar"></button>
-			<div class="flex-1">
-				<form class="max-w-72">
-					<input type="text" placeholder="Search... STRG + K" class="w-full rounded border px-2 py-1" />
-				</form>
-			</div>
-			<app-user-dropdown></app-user-dropdown>
-			<app-dark-mode-toggle></app-dark-mode-toggle>
-		</header>
-		<section class="flex-1 p-6">
-			<app-breadcrumbs></app-breadcrumbs>
-			<router-outlet />
-		</section>
-	</main>
-</z-sidebar-provider>
+		<!-- Hauptbereich -->
+		<main z-sidebar-inset class="flex min-h-dvh flex-col bg-transparent">
+			<header class="bg-white dark:bg-sidebar flex h-14 shrink-0 items-center gap-3 px-4 border-b">
+				<button z-sidebar-trigger aria-label="Toggle Sidebar"></button>
+				<div class="flex-1">
+					<form class="max-w-72">
+						<input type="text" placeholder="Search... STRG + K" class="w-full rounded border px-2 py-1" />
+					</form>
+				</div>
+				<app-user-dropdown></app-user-dropdown>
+				<app-dark-mode-toggle></app-dark-mode-toggle>
+			</header>
+			<section class="flex-1 p-6">
+				<app-breadcrumbs></app-breadcrumbs>
+				<router-outlet />
+			</section>
+		</main>
+	</z-sidebar-provider>
+</app-background-image>

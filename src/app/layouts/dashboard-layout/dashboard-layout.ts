@@ -18,6 +18,7 @@ import { Breadcrumbs } from './breadcrumbs/breadcrumbs';
 import { DarkModeToggleComponent } from './darkmode-toggle/darkmode-toggle';
 
 import { UserDropdown } from './user-dropdown/user-dropdown';
+import { BackgroundImage } from '@/shared/components/background-image/background-image';
 
 /**
  * @return The dashboard layout component.
@@ -32,6 +33,7 @@ import { UserDropdown } from './user-dropdown/user-dropdown';
     Breadcrumbs,
     DarkModeToggleComponent,
     UserDropdown,
+    BackgroundImage,
   ],
   templateUrl: './dashboard-layout.html',
   styleUrl: './dashboard-layout.css',

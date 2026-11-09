@@ -11,20 +11,20 @@ import type { CreditsPosition } from '@/types';
  * @param {CreditsPosition} creditsPosition - The position of the credits (left, center, right).
  *
  * @export
- * @class BackgroundImageComponent
+ * @class BackgroundImage
  * @implements {OnInit}
  */
 @Component({
   selector: 'app-background-image',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './background-image.component.html',
+  templateUrl: './background-image.html',
   providers: [BackgroundImageService],
   host: {
     class: 'min-h-dvh flex flex-col items-center justify-center w-full',
   },
 })
-export class BackgroundImageComponent implements OnInit {
+export class BackgroundImage implements OnInit {
   private readonly backgroundImageService = inject(BackgroundImageService);
 
   readonly classNames = input<string>('');
